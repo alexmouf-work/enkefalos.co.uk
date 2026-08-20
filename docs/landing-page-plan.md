@@ -541,21 +541,29 @@ than full-bleed.
 
 | Path                             | Weight (AVIF) | Weight (JPEG) |
 | -------------------------------- | ------------- | ------------- |
-| `assets/panel-arcade-1200.*`     | 82.1 KB       | 176.9 KB      |
+| `assets/panel-portico-1200.*`     | 91.4 KB       | 216.8 KB      |
 | `assets/panel-court-1200.*`      | 84.1 KB       | 184.3 KB      |
 | `assets/panel-gatehouse-1200.*`   | 65.3 KB       | 148.6 KB      |
 
-**The third panel is now a photograph of its own**, supplied on 20 August 2026 and cropped to 16:9.
-The first two remain crops of the courtyard used for the hero, framed so they read as different
-views. The university portico that stood in as the third panel has been removed rather than found
-another job.
+**Each panel is now its own photograph**, at the principal's direction: the portico first, the
+courtyard second, the gothic court third. Only the second is a crop of the image used for the hero.
+The arcade, a second framing of that same courtyard, was dropped when the portico took first place,
+because two of three panels from one photograph is what the set was trying to avoid.
 
-**It is roughly twice as saturated as everything else on the page.** Measured at 120px: 0.281 against
-0.150 and 0.170 for the courtyard crops and 0.127 for the hero. Its lightness matches the hero almost
-exactly, 0.608 against 0.611, which the panel it replaced did not. The carousel therefore gains a
-brightness match and loses a saturation one, and the shift is visible on the third click. Stated
-rather than corrected: pulling its saturation down to match would be retouching a photograph to suit
-a palette, which is a decision for the principal rather than a defect to fix quietly.
+**The portico's crop is what makes it usable.** Its master is already 16:9, so a full frame includes
+the steps and the people on them, which §3 of the overview forbids. The panel is a 2400 × 1350 window
+from the top of the frame, ending above the steps: dome, pediment, colonnade, no person.
+
+**The set is now less tonally even than it was, and the numbers say so.** Mean saturation across the
+three panels runs 0.385, 0.150, 0.281, against 0.127 for the hero. The portico is the most saturated
+thing on the page, because foliage fills roughly half its frame. Recorded rather than corrected:
+desaturating a photograph to suit a palette is the principal's decision, not a defect to fix
+quietly.
+
+**It is also the most expensive panel to compress**, for the same reason. At the quality the others
+use it came to 128.8 KB against 65 to 84 KB, and it sits in the eagerly loaded first slot. It is
+encoded at a lower quality, 91.4 KB, where the loss falls in foliage and is invisible at display
+size.
 
 **Files are named for what they show, not for where they were taken.** The overview §3 forbids naming
 clients, and an institution's initials in a public path is the same disclosure by a shorter route.

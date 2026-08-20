@@ -97,7 +97,7 @@ language document §2.6.
 | `website/signature/strip-light.png` | 1200 × 160 | Displayed at 600 × 80.                                       |
 | `website/assets/hero-courtyard-*.avif` | 1200, 1800, 2400 wide | Hero photograph. 79.2, 169.4, 284.0 KB.       |
 | `website/assets/hero-courtyard-1600.jpg` | 1600 × 900 | Hero fallback for browsers without AVIF, 294.6 KB.       |
-| `website/assets/panel-arcade-1200.*` | 1200 × 675  | Carousel panel. 82.1 KB as AVIF, 176.9 KB as JPEG.        |
+| `website/assets/panel-portico-1200.*` | 1200 × 675 | Carousel panel one. 91.4 KB as AVIF, 216.8 KB as JPEG.     |
 | `website/assets/panel-court-1200.*` | 1200 × 675  | Carousel panel. 84.1 KB as AVIF, 184.3 KB as JPEG.        |
 | `website/assets/panel-gatehouse-1200.*` | 1200 × 675 | Carousel panel. 65.3 KB as AVIF, 148.6 KB as JPEG.        |
 
@@ -115,9 +115,14 @@ and an institution's initials in a public path is the same disclosure by a short
 files were renamed on that basis on 20 August 2026, which was safe because `/assets/` paths are
 internal; the same rename under `/brand/` or `/signature/` would have been forbidden.
 
-**The three carousel panels are now two photographs and a third.** Two are crops of the courtyard
-already used for the hero, framed to read as different views; the third is a gothic court supplied
-on 20 August 2026 and used at a 16:9 crop of its own.
+**The three carousel panels are now three distinct photographs**, one from each source supplied: a
+neoclassical portico first, a courtyard second, a gothic court third. The second remains a crop of
+the photograph used for the hero; the other two are their own images.
+
+**The portico is cropped to exclude people, and the crop is the reason it can be used at all.** §3
+forbids faces. Its master is already 16:9, so a full frame would include the steps and everyone
+sitting on them. The panel is a 2400 × 1350 window taken from the top of the frame, ending well above
+where the steps begin, containing the dome, the pediment and the colonnade and no person at all.
 
 **That third file was the first to arrive carrying real metadata**, and the first where stripping
 could have cost something. It held EXIF, an IPTC block, an XMP packet, an Adobe marker and an ICC
@@ -139,8 +144,9 @@ saturated as anything else on the page. Its lightness, 0.608, matches the hero's
 and is a better fit than the panel it replaced. Brighter and better matched; more saturated and less
 so.
 
-**One photograph supplied on 20 August 2026 is now unused.** The university portico, which was
-standing in as the third panel, has been removed rather than found another job.
+**One crop is now unused.** The arcade, a second framing of the courtyard photograph, was dropped
+when the portico took first place. Keeping it would have meant two of three panels drawn from the
+same photograph, which is what the set was trying to get away from.
 
 ### 5.2 Held back deliberately
 
