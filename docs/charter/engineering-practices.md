@@ -615,6 +615,32 @@ element has a reduced or absent form.
 }
 ```
 
+**AC5a — Content hidden by a rotating panel is hidden from everyone, or from nobody.** An inactive
+slide is `inert`, not merely transparent or positioned offscreen.
+
+_Rationale:_ `opacity: 0` and `transform: translate` leave an element in the tab order and readable
+by a screen reader, so a keyboard user tabs into text they cannot see and a screen reader announces
+three panels at once. The reference implementation this site's carousel is modelled on has exactly
+this defect. `inert` removes an element from the tab order and the accessibility tree together,
+which is the only way the visual state and the announced state agree.
+
+```html
+<div class="panel" inert>…</div>
+<div class="panel" data-active="true">…</div>
+```
+
+```html
+<div class="panel" style="opacity: 0">…</div>
+<!-- invisible, still focusable, still announced -->
+```
+
+**AC5b — Nothing rotates on a timer.** No autoplaying carousel, no auto-advancing banner.
+
+_Rationale:_ content that moves on a timer takes the page away from a reader mid-sentence, and the
+accessibility floor then requires a pause control to put it back, which is a component built to
+undo a decision nobody needed to make. Where a set is small enough to be worth showing, it is small
+enough for the reader to advance themselves.
+
 **AC6 — Colour is never the only carrier of meaning**, and text is never placed over a photograph
 without a measured contrast against the region it actually sits on.
 
@@ -640,9 +666,14 @@ rather than being quietly ignored.
 
 **The image budget was 300 KB and was raised to 350 KB on 20 August 2026**, when a full-bleed hero
 photograph was added to a page designed without one. It is recorded rather than quietly exceeded,
-because a budget that moves silently the first time it binds was never a budget. What the page
-actually costs at each step: **187 KB** at the 1800px AVIF, **301 KB** at the 2400px AVIF, **312 KB**
-for a browser taking the JPEG fallback. The typical laptop is served the first of these.
+because a budget that moves silently the first time it binds was never a budget.
+
+**The budget binds the initial load, not the eventual total.** An image fetched only because the
+visitor asked for it — a carousel panel they clicked through to — is counted separately, because
+counting it against the first paint would price a cost nobody has yet paid, and would push every
+design toward showing less rather than loading less. **Both figures are stated wherever the budget
+is:** at 20 August 2026 the landing page costs **269 KB** on the initial load and **447 KB** with
+every carousel panel fetched.
 
 **PF2 — Every `<img>` carries `width` and `height` or an `aspect-ratio`.** Layout shift is a defect,
 not a taste.

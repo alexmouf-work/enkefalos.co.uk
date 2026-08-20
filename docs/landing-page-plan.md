@@ -18,8 +18,8 @@ can be rejected in one place rather than discovered in the markup.
 ## 1. The constraint that decides everything
 
 **There is almost nothing to say, and that is deliberate.** The principal has set the page's whole
-content: Enkefalos Solutions offers software solutions and IT contracting services, the page should
-not expand much on that, and it is not advertising. No client may be named. No face and no personal
+content: Enkefalos Solutions offers consultancy, software solutions and IT contracting services, the
+page should not expand much on that, and it is not advertising. No client may be named. No face and no personal
 name appears. There are no figures to quote, no case studies and no testimonials. **One photograph
 was supplied on 20 August 2026 and is used, once**, as the hero establishing image; it carries no
 information and makes no claim, which is why it does not disturb any of the above.
@@ -35,8 +35,8 @@ emptiness reads as composure. A page with little to say and the confidence to le
 a different object from a page with little to say and a lot of furniture.
 
 **The corollary, stated so it is not quietly broken later.** Every section that a consultancy site
-conventionally carries and this one does not — services grid, client logos, testimonials, team,
-statistics, blog, contact form — is absent because it was decided against, not because it is
+conventionally carries and this one does not — client logos, testimonials, team, statistics, case
+studies, blog, contact form — is absent because it was decided against, not because it is
 outstanding. Adding one is a change to this plan, not a completion of it.
 
 ---
@@ -83,8 +83,11 @@ full-bleed green band carrying a single statement.
 
 ### 2.3 What is taken from neither
 
-**No carousel.** Glasswing has three; they hide content behind an interaction most visitors never
-perform, and this page has less content than fits on a screen already.
+**One carousel, where both sources have several.** Glasswing runs three and St Paul's runs a quote
+slider; both hide content behind an interaction most visitors never perform. That objection is real
+and it is overruled here for one section only, at the principal's direction, because three service
+descriptions are each complete on their own and losing two of them costs a reader nothing they
+needed. It is not extended to anything the reader must see.
 
 **A hero photograph, but no image tiles and no type over a picture.** St Paul's leads with a
 full-width banner image and follows with four photographic tiles, each carrying a headline in white
@@ -132,7 +135,7 @@ gone slightly wrong in printing. The colour costs a token and buys nothing.
 **Green is ink, not area, with one deliberate exception.** This is the parent project's visual language
 finding applied here: on that firm's own site the dominant navy fills under 2.3% of any screen and is
 almost entirely letterforms and small solid rectangles. The same discipline holds the green. The
-exception is the one inverted band in §5.6, which exists because the email signature already has a
+exception is the one inverted band in §5.7, which exists because the email signature already has a
 green strip and the page should look like it belongs to the same company.
 
 ### 3.3 Contrast, computed
@@ -195,8 +198,7 @@ appear at one size, in one place, and never be matched or echoed by type set in 
 
 ## 5. The page, band by band
 
-**Six bands**, the first of which has two parts: a photograph and the title beneath it. Each is
-full-bleed; each holds its content inside a gutter of
+**Nine bands.** Each is full-bleed; each holds its content inside a gutter of
 `clamp(24px, 10vw, 160px)`; each is separated from its neighbour by ground tone rather than by a
 border.
 
@@ -215,7 +217,7 @@ on a phone and there is nothing in it worth following the reader down the page.
 viewports easing to `4 / 3` on a phone, with `object-fit: cover` doing the cropping, so the framing
 adapts and no crop is baked permanently into a file.
 
-**The image is `assets/hero-sps-*`**, supplied by the principal on 20 August 2026 and stripped of
+**The image is `assets/hero-courtyard-*`**, supplied by the principal on 20 August 2026 and stripped of
 every metadata segment before it entered the repository. It is a courtyard: pale stone paving, a
 glass facade, cherry blossom, a low green hedge. **Its own palette is almost exactly the site's**,
 which is why it sits in this design rather than merely on top of it.
@@ -260,57 +262,105 @@ centred above it.
 **This is the whole of what the company says about itself in prose.** Everything else on the page is a
 label, a fact or a legal requirement.
 
-### 5.5 What we do — the three-up
+### 5.5 What we do — the rotating panel
 
-**Ivory.** A section title in sans, uppercase, centred. Below it three equal columns, collapsing to
-one on a phone.
+**Ivory.** A section title in sans, uppercase, centred, then a single panel that rotates through the
+three services under the reader's control. This is the St Paul's device the principal asked for, and
+it is the page's one substantial piece of interaction.
 
-Each column, from the top: the green `3px` by `40px` accent rule, a sans 600 label in green with
-capitals applied by the stylesheet, and two lines of serif body in the neutral.
+**Each panel, top to bottom:** a 16:9 photograph, the green `3px` by `40px` accent rule, a sans 600
+label in green with capitals applied by the stylesheet, and two lines of serif body in the neutral.
 
-**The three columns carry no icons.** An icon set would be three drawings invented to fill space, and
-the accent rule already does the work of marking where each column starts.
+**The controls sit above the panel, to the right of the section title**, following Glasswing's quote
+carousel rather than St Paul's dots: a counter reading `1 / 3` in sans at 11px tracked `.2px`, and
+two 28px buttons with `border-radius: 8px` and a 1px border in the control colour. **The buttons
+disable at the ends rather than wrapping**, and a disabled button drops to `opacity: .4`. Wrapping
+saves a click and costs the reader any sense of where they are in a set of three.
 
-**This band is where St Paul's four-up tile row is echoed and where its photography is dropped.**
+**Transition:** the outgoing panel fades out and the incoming one fades in from `±24px` on the page's
+one curve, over `.8s`. Nothing slides horizontally: a translate of 24px reads as a settle, and a
+full-width slide would be a second motion idea competing with §6's.
 
-### 5.6 The green band — contact
+**No autoplay, and this is a position rather than an oversight.** Content that moves on a timer takes
+the page away from a reader mid-sentence, forces a pause control to satisfy the accessibility floor,
+and is the reason most carousels are ignored. Three panels under the reader's hand need none of it.
+
+#### What this costs, and the four rules that pay for it
+
+**Without script, all three panels are visible, stacked.** The rule that hides the inactive ones is
+scoped to the class an inline script puts on the root element before paint. A failed script leaves a
+longer section, never an empty one. Practices §1 S2.
+
+**Inactive panels are `inert`.** Not `opacity: 0` alone, which is what the reference implementation
+uses and which leaves the hidden panels in the tab order and readable by a screen reader. `inert`
+removes them from both.
+
+**The stage is `aria-live="polite"`** so a change is announced, and each button carries an explicit
+label rather than relying on an arrow glyph.
+
+**The panel is keyboard-operable and swipeable.** The buttons are real `<button>` elements, so they
+work by keyboard for free; left and right arrow keys work when focus is inside the group; a pointer
+swipe past a threshold moves one panel on touch.
+
+**The carousel's real cost is honesty about content.** A carousel hides two thirds of what it holds
+behind an interaction most visitors never perform. That is an acceptable trade for three service
+descriptions which are each complete on their own, and it would not be acceptable for anything the
+reader must see.
+
+### 5.6 How we work
+
+**Ivory-150 `#f0eee6`.** A section title in sans, uppercase, centred. Below it three numbered points
+in a row, collapsing to one column on a phone.
+
+Each point: the number in serif at 36px in green, the accent rule, a sans 600 label in green, and
+three or four lines of serif body.
+
+**The numbering is real.** These are stages in order, and the order is the argument. This is the one
+place on the page where a numeral carries information rather than decorating a list, which is why it
+appears here and nowhere else.
+
+**This band is the consultancy copy.** §7 sets it out.
+
+### 5.7 The green band
 
 **Full-bleed `#004235`. The only area use of the brand colour on the page.**
 
-Three elements, centred, in this order:
-
-- The statement, serif at 36px in ivory `#faf9f5`, at `max-width: 24em`.
-- A label, `ENQUIRIES`, sans 600 at 12px, tracked `.13em`, in `#d1cfc5`, with capitals applied by
-  the stylesheet.
-- **The address, as a link**, serif at 28px in ivory, underlined.
+A single statement in serif at 36px in ivory `#faf9f5`, centred, at `max-width: 24em`. Nothing else:
+no button, no second paragraph, no rule.
 
 **Generous padding, at least 128px top and bottom at wide viewports**, so the band reads as a
 deliberate block of colour rather than as a coloured strip around a sentence.
 
-**Why contact lives here rather than in a band of its own.** §3.2 permits green as an area exactly
-once, so a second full-bleed band would break the rule that makes the colour work; and an ivory
-contact band after the green one would end the page on its quietest note rather than its strongest.
-This band was already the terminal beat. Giving it something to do makes it a conclusion rather than
-a flourish.
+**It is no longer the terminal beat, and it is better for it.** It now pivots between what the
+company is and how to reach it, with ivory either side, which is what makes a single band of strong
+colour read as punctuation rather than as a footer that arrived early.
 
-**The link is underlined always, not on hover.** Everything on this band is ivory, so colour cannot
-distinguish the link from the text around it, and the accessibility floor forbids colour as the only
-carrier of meaning. `:focus-visible` draws a 2px ivory outline at 3px offset, which is the one place
-on the page where the focus ring is ivory rather than green.
+### 5.8 Enquiries
 
-**Contrast:** ivory `#faf9f5` on green is 10.89:1 and the label at `#d1cfc5` is 7.34:1. Both clear
-AAA, so the band needs no adjustment for the link treatment.
+**Ivory `#faf9f5`, fully inverted from the band above it: ivory ground, green type.** The separation
+is carried by ground and by ink at once, which is the most either can do.
 
-**A plain `mailto:`, not an obfuscated one.** Splitting the address across script or encoding it to
-defeat harvesters would break the rule that the page works before the script does, and would hide
-the one actionable thing on the page from anyone whose script failed. Harvesters defeat obfuscation
-anyway; the mail provider's filtering is the layer that actually addresses it.
+Centred, in this order: the green accent rule, the label `ENQUIRIES` in sans 600 at 12px tracked
+`.13em`, and **the address as a link**, serif at 28px in green, underlined.
 
-**No form, and no phone number.** A form is a data-collection surface with a privacy policy behind
-it, which the overview §3 rules out. The number is a personal mobile and the principal has excluded
-it.
+**Nothing introduces the address.** A line reading "for all enquiries, please write to" is
+throat-clearing above a word that already says what it is. The label is the sentence, and the band's
+own padding gives it the weight a supporting line would otherwise have to supply.
 
-### 5.7 Footer
+**The link is underlined always, not on hover**, because green is also the colour of every heading on
+this ground and the accessibility floor forbids colour as the only carrier of meaning.
+
+**Contrast:** green on ivory is 10.89:1 for both the label and the link. The focus ring is the page's
+standard green outline here, unlike the band above it.
+
+**A plain `mailto:`, not an obfuscated one.** Splitting the address across script would hide the one
+actionable thing on the page from anyone whose script failed, and harvesters defeat obfuscation
+anyway. The mail provider's filtering is the layer that actually addresses it.
+
+**No form and no phone number.** A form is a data-collection surface with a privacy policy behind it,
+which the overview §3 rules out. The number is a personal mobile and the principal has excluded it.
+
+### 5.9 Footer
 
 **Ivory-200 `#e8e6dc`, the darkest ivory step, so the page settles rather than stopping.**
 
@@ -359,9 +409,14 @@ AC5.
 
 **Every observer is disconnected once its elements have revealed.** Practices §6 R4.
 
+**The panel transition is the second and last motion on the page**, and it shares the curve. The
+outgoing panel fades out; the incoming one fades in from `±24px` over `.8s` on
+`cubic-bezier(.22, 1, .36, 1)`. Under `prefers-reduced-motion: reduce` it becomes an instant swap
+with no transform and no fade, which is the honest reduction: a shortened fade is still a fade.
+
 **Nothing else on the page moves.** No parallax, no scroll-driven scaling, no sticky elements, no
-counters that animate upward. One motion idea, applied consistently, is the whole of the page's
-behaviour.
+counters that animate upward, no autoplay anywhere. Two motion ideas on one curve is the whole of the
+page's behaviour, and the second exists only because §5.5 needed it.
 
 ---
 
@@ -381,34 +436,50 @@ this document cannot check.
 
 > **Enkefalos Solutions**
 >
-> Software solutions and IT contracting services for enterprise organisations.
+> Consultancy, software solutions and IT contracting for enterprise organisations.
 
 ### Statement
 
-> We design, build and maintain software for enterprise clients, and provide specialist IT
-> contracting alongside their own teams.
+> We advise enterprise clients on the software they run, design and build what they do not have, and
+> provide specialist contracting alongside their own teams.
 
 ### What we do
 
+> **CONSULTANCY**
+> Advice on architecture, delivery and technology decisions, given to the people who will have to
+> live with them afterwards.
+>
 > **SOFTWARE SOLUTIONS**
 > Software specified, built and maintained around the requirements of the organisation it serves.
 >
 > **IT CONTRACTING**
 > Specialist capability provided alongside existing teams, for as long as a programme requires it.
->
-> **ENTERPRISE DELIVERY**
-> Engagements run to the governance, security and reporting standards our clients already work to.
 
-### Green band, and contact
+### How we work
+
+> **ONE. UNDERSTAND**
+> We start with the constraints an organisation already operates under: its governance, its security
+> posture, the systems it has bought and the people who maintain them. Advice that ignores any of
+> these is advice that cannot be acted on.
+>
+> **TWO. RECOMMEND**
+> We set out the options with their costs and their consequences, including the option of changing
+> nothing, and we say which of them we would choose. A recommendation that hedges is a decision
+> handed back to the client.
+>
+> **THREE. DELIVER**
+> We build what was agreed, to the standards the organisation already holds itself to, and we hand
+> over documentation that lets a team maintain the result without us.
+
+### Green band
 
 > Enkefalos Solutions works with established organisations on the systems they depend on.
->
+
+### Enquiries
+
 > **ENQUIRIES**
 >
 > hello@enkefalos.co.uk
-
-**No sentence introduces the address.** "For all enquiries, please write to" and its variants add a
-line of throat-clearing above a word that already says what it is. The label is the sentence.
 
 ### Footer
 
@@ -442,12 +513,33 @@ needs re-exporting for the signature.
 a responsive set. Sixteen by nine at every step, because §5.2 crops with `object-fit` rather than
 baking a crop into a permanent file.
 
-| Path                        | Size        | Weight   |
-| --------------------------- | ----------- | --------- |
-| `assets/hero-sps-1200.avif` | 1200 × 675  | 79.2 KB  |
-| `assets/hero-sps-1800.avif` | 1800 × 1012 | 169.4 KB |
-| `assets/hero-sps-2400.avif` | 2400 × 1350 | 284.0 KB |
-| `assets/hero-sps-1600.jpg`  | 1600 × 900  | 294.6 KB |
+| Path                              | Size        | Weight   |
+| --------------------------------- | ----------- | --------- |
+| `assets/hero-courtyard-1200.avif` | 1200 × 675  | 79.2 KB  |
+| `assets/hero-courtyard-1800.avif` | 1800 × 1012 | 169.4 KB |
+| `assets/hero-courtyard-2400.avif` | 2400 × 1350 | 284.0 KB |
+| `assets/hero-courtyard-1600.jpg`  | 1600 × 900  | 294.6 KB |
+
+**The three carousel panels**, at one width each because they sit inside the content column rather
+than full-bleed.
+
+| Path                             | Weight (AVIF) | Weight (JPEG) |
+| -------------------------------- | ------------- | ------------- |
+| `assets/panel-arcade-1200.*`     | 82.1 KB       | 176.9 KB      |
+| `assets/panel-court-1200.*`      | 84.1 KB       | 184.3 KB      |
+| `assets/panel-portico-1200.*`    | 93.7 KB       | 177.9 KB      |
+
+**The three panels are three frames of two photographs, and that is a placeholder.** Two are crops
+of the courtyard already used for the hero, framed so they read as different views; the third is the
+upper part of the second photograph supplied, cropped above the steps so that no person appears in
+it. **The section wants three distinct photographs** and would be better with them. The mechanism can
+be judged as it stands; the imagery cannot.
+
+**Files are named for what they show, not for where they were taken.** The overview §3 forbids naming
+clients, and an institution's initials in a public path is the same disclosure by a shorter route.
+The hero files were renamed on 20 August 2026 for this reason. **The rename was safe** because
+`/assets/` paths are internal, referenced only by markup this project controls; the same rename on
+`/brand/` or `/signature/` would have been forbidden outright.
 
 **AVIF at three widths and one JPEG fallback**, rather than a full ladder in both formats. AVIF is
 carried by every current browser and is roughly half the weight; a browser that cannot decode it is
@@ -473,7 +565,7 @@ as a template with those four fields replaced by placeholders, on request.
 
 ### 8.3 Still needed
 
-**The mark on its own, without the wordmark**, as SVG. §5.1 needs it small in the masthead and §5.7
+**The mark on its own, without the wordmark**, as SVG. §5.1 needs it small in the masthead and §5.9
 needs the lockup in the footer, and the 300px PNG is adequate for both at those sizes. **This is
 therefore no longer blocking**, because the photograph replaced the large mark in the hero. It is
 still worth having: single-colour line art is the ideal case for SVG, giving every size from one
@@ -509,7 +601,7 @@ design.
 which is what was asked for, and it is the part of this plan most likely to be wrong in a way only the
 principal can see.
 
-**Whether three columns in §5.5 is right, or two, or none.** Three is a shape rather than a finding.
+**Whether three services in §5.5 is right, or two.** Three is a shape rather than a finding.
 Two would be the two services actually named; none would push the page to four bands and lean harder
 on §1's argument about space.
 

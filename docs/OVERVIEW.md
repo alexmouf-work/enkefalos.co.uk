@@ -12,7 +12,8 @@ copy. Nothing else is.**
 
 **Enkefalos Solutions is the trading name of Enkefalos Holdings Ltd.**
 
-**It offers software solutions and IT contracting services to enterprise organisations.**
+**It offers consultancy, software solutions and IT contracting services to enterprise
+organisations.**
 
 **Enkefalos Holdings Ltd is registered in England and Wales, company number 17301883, London, United
 Kingdom.** The principal has authorised the legal name and the company number to appear on the site.
@@ -93,10 +94,11 @@ language document §2.6.
 | `brand/logo-lockup.png`     | 300 × 99    | Transparent, single colour `#004235`. Displayed at 150 × 50. |
 | `signature/strip-green.png` | 1200 × 160  | Displayed at 600 × 80.                                       |
 | `signature/strip-light.png` | 1200 × 160  | Displayed at 600 × 80.                                       |
-| `assets/hero-sps-1200.avif` | 1200 × 675  | Hero photograph, 79.2 KB.                                    |
-| `assets/hero-sps-1800.avif` | 1800 × 1012 | Hero photograph, 169.4 KB. The step a typical laptop takes.  |
-| `assets/hero-sps-2400.avif` | 2400 × 1350 | Hero photograph, 284.0 KB.                                   |
-| `assets/hero-sps-1600.jpg`  | 1600 × 900  | Fallback for browsers without AVIF, 294.6 KB.                |
+| `assets/hero-courtyard-*.avif` | 1200, 1800, 2400 wide | Hero photograph. 79.2, 169.4, 284.0 KB.       |
+| `assets/hero-courtyard-1600.jpg` | 1600 × 900 | Hero fallback for browsers without AVIF, 294.6 KB.       |
+| `assets/panel-arcade-1200.*`   | 1200 × 675  | Carousel panel. 82.1 KB as AVIF, 176.9 KB as JPEG.        |
+| `assets/panel-court-1200.*`    | 1200 × 675  | Carousel panel. 84.1 KB as AVIF, 184.3 KB as JPEG.        |
+| `assets/panel-portico-1200.*`  | 1200 × 675  | Carousel panel. 93.7 KB as AVIF, 177.9 KB as JPEG.        |
 
 The three signature and brand images are at twice their display size, which is what
 [`charter/engineering-practices.md`](charter/engineering-practices.md) §7 A5 requires.
@@ -107,8 +109,16 @@ full-resolution masters were stripped **losslessly** by removing that segment ra
 re-encoding: the decoded pixels are byte-identical to what was supplied. The derivatives are
 re-encoded from those masters and were verified to carry no `APPn` or comment segment.
 
-**A second photograph was supplied and is not used.** It shows identifiable people, which §3
-forbids. It was stripped on the same terms and returned to the principal rather than committed.
+**Files are named for what they show, not for where they were taken.** §3 forbids naming clients,
+and an institution's initials in a public path is the same disclosure by a shorter route. The hero
+files were renamed on that basis on 20 August 2026, which was safe because `/assets/` paths are
+internal; the same rename under `/brand/` or `/signature/` would have been forbidden.
+
+**The three carousel panels are three frames of two photographs.** Two are crops of the courtyard
+already used for the hero, framed to read as different views; the third is the upper part of the
+second photograph supplied, cropped above the steps so no person appears in it. **The section wants
+three distinct photographs** and is better with them. The mechanism can be judged as it stands; the
+imagery cannot.
 
 ### 5.2 Held back deliberately
 
