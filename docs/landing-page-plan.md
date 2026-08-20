@@ -409,6 +409,18 @@ AC5.
 
 **Every observer is disconnected once its elements have revealed.** Practices §6 R4.
 
+**Anything already at or above the viewport when the script runs is revealed immediately, without
+being observed at all.** An `IntersectionObserver` only fires for elements currently intersecting, so
+a page opened at an anchor or restored to a saved scroll position would otherwise hold everything
+above the reader at zero opacity until they scrolled back up to it, at which point content they had
+already passed would animate in as though it were new.
+
+**Verified, and one alarm dismissed.** A first test reported three of nine elements revealed after a
+jump to the foot of the page, which looked like content stranded invisible. It was a measurement
+artefact: the six unrevealed elements were off screen, and the check that matters — whether any
+element is hidden *while in view* — returns zero under gradual scrolling, a jump to the bottom, and a
+jump followed by a return to the top. Gradual scrolling reveals all nine.
+
 **The panel transition is the second and last motion on the page**, and it shares the curve. The
 outgoing panel fades out; the incoming one fades in from `±24px` over `.8s` on
 `cubic-bezier(.22, 1, .36, 1)`. Under `prefers-reduced-motion: reduce` it becomes an instant swap
