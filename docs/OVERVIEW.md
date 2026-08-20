@@ -99,15 +99,15 @@ language document §2.6.
 | `website/assets/hero-courtyard-1600.jpg` | 1600 × 900 | Hero fallback for browsers without AVIF, 294.6 KB.       |
 | `website/assets/panel-arcade-1200.*` | 1200 × 675  | Carousel panel. 82.1 KB as AVIF, 176.9 KB as JPEG.        |
 | `website/assets/panel-court-1200.*` | 1200 × 675  | Carousel panel. 84.1 KB as AVIF, 184.3 KB as JPEG.        |
-| `website/assets/panel-portico-1200.*` | 1200 × 675  | Carousel panel. 93.7 KB as AVIF, 177.9 KB as JPEG.        |
+| `website/assets/panel-gatehouse-1200.*` | 1200 × 675 | Carousel panel. 65.3 KB as AVIF, 148.6 KB as JPEG.        |
 
 The three signature and brand images are at twice their display size, which is what
 [`charter/engineering-practices.md`](charter/engineering-practices.md) §7 A5 requires.
 
-**Every image here carries no metadata of any kind.** The photographs supplied on 20 August 2026
-held no EXIF, no GPS and no colour profile, only an eighteen-byte JFIF header, so the
-full-resolution masters were stripped **losslessly** by removing that segment rather than by
-re-encoding: the decoded pixels are byte-identical to what was supplied. The derivatives are
+**Every image here carries no metadata of any kind, and every master was stripped losslessly.** The
+first two photographs held only an eighteen-byte JFIF header; the third held a good deal more, and is
+covered below. In each case the master was rebuilt without its metadata segments rather than
+re-encoded, so the decoded pixels hash identically to what was supplied. The derivatives are
 re-encoded from those masters and were verified to carry no `APPn` or comment segment.
 
 **Files are named for what they show, not for where they were taken.** §3 forbids naming clients,
@@ -115,11 +115,32 @@ and an institution's initials in a public path is the same disclosure by a short
 files were renamed on that basis on 20 August 2026, which was safe because `/assets/` paths are
 internal; the same rename under `/brand/` or `/signature/` would have been forbidden.
 
-**The three carousel panels are three frames of two photographs.** Two are crops of the courtyard
-already used for the hero, framed to read as different views; the third is the upper part of the
-second photograph supplied, cropped above the steps so no person appears in it. **The section wants
-three distinct photographs** and is better with them. The mechanism can be judged as it stands; the
-imagery cannot.
+**The three carousel panels are now two photographs and a third.** Two are crops of the courtyard
+already used for the hero, framed to read as different views; the third is a gothic court supplied
+on 20 August 2026 and used at a 16:9 crop of its own.
+
+**That third file was the first to arrive carrying real metadata**, and the first where stripping
+could have cost something. It held EXIF, an IPTC block, an XMP packet, an Adobe marker and an ICC
+profile. Two checks decided that a lossless strip was safe: **the profile is sRGB IEC61966-2.1**, so
+removing it changes no colour, and **the Adobe marker's transform flag is 1**, so decoders read the
+remaining data as YCbCr exactly as they did before. Had the profile been Display P3 or Adobe RGB, the
+correct order would have been to convert first and strip second; had the transform flag been 0, the
+marker could not have been dropped at all. The decoded pixels of the stripped master hash identically
+to the original.
+
+**Its rights are not recorded in the file.** The IPTC and XMP blocks carry a capture date and nothing
+else: no creator, no copyright notice, no usage terms. The file therefore neither establishes nor
+refutes the licence question raised on 20 August 2026, and the principal supplied it again after that
+question was put.
+
+**A measured note on how it sits with the other two.** Sampled at 120px, its mean saturation is 0.281
+against 0.150 and 0.170 for the courtyard crops and 0.127 for the hero, so it is roughly twice as
+saturated as anything else on the page. Its lightness, 0.608, matches the hero's 0.611 almost exactly
+and is a better fit than the panel it replaced. Brighter and better matched; more saturated and less
+so.
+
+**One photograph supplied on 20 August 2026 is now unused.** The university portico, which was
+standing in as the third panel, has been removed rather than found another job.
 
 ### 5.2 Held back deliberately
 
@@ -134,9 +155,9 @@ with those fields replaced by placeholders, on request.
   serves the masthead at 36px, and `favicon-32.png` and `apple-touch-icon.png` were cut from the same
   crop. An SVG would replace all three with one small file that is sharp at every size and
   recolourable by CSS, and it is worth having whenever the source artwork surfaces.
-- **A third photograph for the carousel**, so that its three panels stop being three frames of two
-  images. One was offered on 20 August 2026 and pasted into the conversation rather than attached, so
-  its bytes never reached this session; its licence also needs settling before it is used.
+- **The licence position on the third carousel photograph.** The file carries no creator, copyright
+  notice or usage terms of its own, and it is a professionally produced architectural photograph
+  rather than a phone image. Settling this is the principal's, and it is not blocking the build.
 
 ### 5.4 The path scheme, now in force
 

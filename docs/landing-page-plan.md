@@ -543,13 +543,19 @@ than full-bleed.
 | -------------------------------- | ------------- | ------------- |
 | `assets/panel-arcade-1200.*`     | 82.1 KB       | 176.9 KB      |
 | `assets/panel-court-1200.*`      | 84.1 KB       | 184.3 KB      |
-| `assets/panel-portico-1200.*`    | 93.7 KB       | 177.9 KB      |
+| `assets/panel-gatehouse-1200.*`   | 65.3 KB       | 148.6 KB      |
 
-**The three panels are three frames of two photographs, and that is a placeholder.** Two are crops
-of the courtyard already used for the hero, framed so they read as different views; the third is the
-upper part of the second photograph supplied, cropped above the steps so that no person appears in
-it. **The section wants three distinct photographs** and would be better with them. The mechanism can
-be judged as it stands; the imagery cannot.
+**The third panel is now a photograph of its own**, supplied on 20 August 2026 and cropped to 16:9.
+The first two remain crops of the courtyard used for the hero, framed so they read as different
+views. The university portico that stood in as the third panel has been removed rather than found
+another job.
+
+**It is roughly twice as saturated as everything else on the page.** Measured at 120px: 0.281 against
+0.150 and 0.170 for the courtyard crops and 0.127 for the hero. Its lightness matches the hero almost
+exactly, 0.608 against 0.611, which the panel it replaced did not. The carousel therefore gains a
+brightness match and loses a saturation one, and the shift is visible on the third click. Stated
+rather than corrected: pulling its saturation down to match would be retouching a photograph to suit
+a palette, which is a decision for the principal rather than a defect to fix quietly.
 
 **Files are named for what they show, not for where they were taken.** The overview §3 forbids naming
 clients, and an institution's initials in a public path is the same disclosure by a shorter route.
@@ -567,10 +573,17 @@ profile, only an eighteen-byte JFIF header, so the full-resolution masters could
 byte-identical to the originals. The derivatives above are re-encoded from those masters and were
 verified to contain no `APPn` or comment segment of any kind.
 
-**A second photograph was supplied and is not used.** It shows a university building with
-identifiable people on its steps, and §3 of the overview forbids faces. One establishing image is
-also enough for a page of this length; a second would be decoration. It was stripped on the same
-terms and returned to the principal rather than committed.
+**Every image was stripped of all metadata, and the third one made that a real question.** The two
+photographs supplied first held only a JFIF header, so their masters were stripped losslessly. The
+third held EXIF, IPTC, XMP, an Adobe marker and an ICC profile. It was still stripped losslessly,
+because two checks came back safe: the profile is sRGB, so removing it shifts no colour, and the
+Adobe transform flag is 1, so the image still decodes as YCbCr without it. A Display P3 profile would
+have had to be converted before removal, and a transform flag of 0 would have made the Adobe marker
+unremovable.
+
+**One supplied photograph is unused.** The university portico shows identifiable people on its steps,
+which the overview §3 forbids, and the crop that avoided them is no longer needed now a third
+photograph exists.
 
 ### 8.2 Held back deliberately
 
