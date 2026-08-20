@@ -140,11 +140,17 @@ so a correction reaches people unevenly rather than at once.
 
 **Attribute what is not ours.** Figures, ratings and third-party data name their source.
 
-**Never state a fact about Enkefalos that the principal has not stated.** What the business does, who
-it serves, what it has done, what it is accredited for. This is a stop-and-ask under
-[`CHARTER.md`](CHARTER.md) §6.3, and it is the single most likely way for an agent to put an untruth
-on this site: a plausible sentence is easier to write than an accurate one, and nothing in the
-repository will contradict it.
+**Never state a fact about Enkefalos beyond what [`../OVERVIEW.md`](../OVERVIEW.md) §1 records.**
+What the business does, who it serves, what it has done, what it is accredited for. That record is
+two sentences long, and it is deliberately the whole of it: the site is a front page, not a pitch,
+and the principal has said there is no need to give too much information. Going further is a
+stop-and-ask under [`CHARTER.md`](CHARTER.md) §6.3, and it is the single most likely way for an agent
+to put an untruth on this site, because a plausible sentence is easier to write than an accurate one
+and nothing in the repository will contradict it.
+
+**Naming a client is its own decision, even when the relationship is recorded.** The overview records
+a partnership; it does not clear it for publication. Publishing a client's name is a commercial act
+and possibly the client's call, so no copy names one until the principal says it may.
 
 ---
 

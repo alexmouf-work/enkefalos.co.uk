@@ -538,9 +538,24 @@ The **off-centre reading column** (§5.3) is striking and it commits the whole p
 that must have something in it. Take it only if there is a table of contents or an equivalent to
 live there; an empty 480px margin is not the same design.
 
-The **dark theme**. Glasswing is `slate` because it is announcing a security programme. Enkefalos
-should choose, and the theme mechanism in §2.1 means choosing wrongly is one attribute to change
-rather than a rebuild. Whichever is chosen, §2.4's two-step rule inverts with it.
+**The theme is decided, and it is not Glasswing's.** Enkefalos is **ivory**, the light theme, chosen
+by the principal on 20 August 2026 and recorded in [`../OVERVIEW.md`](../OVERVIEW.md) §3. Glasswing
+is `slate` because it is announcing a security programme; a front page explaining what a consultancy
+is has no such reason to be dark.
+
+**Two consequences, and neither is optional.**
+
+**§2.4's two-step rule inverts.** Headings go to `--slate-950` and body copy one step *down in
+lightness* to `--slate-700`, not one step up. On a light page the danger is the opposite of the dark
+page's: body text at full contrast is comfortable, and the temptation is to grey it toward
+illegibility for the look of it. The step exists to separate heading from body, not to soften the
+body.
+
+**Both defects in §2.5 land on us rather than beside us.** The ivory theme is the side where the
+tertiary text fails AA at 3.47:1 and the control border reaches only 1.48:1. On the slate theme those
+are observations about someone else's page; here they are the exact values this site would ship if it
+transcribed the source. §10's token file corrects both, and the corrections are the reason to build
+from that block rather than from §2.1's table.
 
 The **radii** (§3). They are the clearest divergence from the parent repository's flat visual
 language, and [`public-copy-style.md`](public-copy-style.md) §9 records that this site follows
@@ -568,8 +583,12 @@ anything changes.
 
 ## 10. A starting token file
 
-**Not a specification of this site, a transcription of the source into the form
-[`engineering-practices.md`](engineering-practices.md) §2 N2 requires.** Names describe roles.
+**A transcription of the source into the form [`engineering-practices.md`](engineering-practices.md)
+§2 N2 requires, with the corrections §2.5 calls for.** Names describe roles.
+
+**`ivory` is this site's theme** and `slate` is kept because the mechanism is worth having and
+because a page that cannot be inverted is a page whose colours are not really tokens. Set
+`data-theme="ivory"` on the root element.
 
 ```css
 :root {

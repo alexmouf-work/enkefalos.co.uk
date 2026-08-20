@@ -12,12 +12,15 @@ secret. Never move, rename or delete a file that has been served. Charter §1 an
 **About to write a word the site shows anyone?** Read
 [docs/charter/public-copy-style.md](docs/charter/public-copy-style.md) first — the house voice. The
 charter's §6.5 governs what you write back to the principal; that document governs everything the
-site says to everyone else. And you may not state a fact about Enkefalos that the principal has not
-stated: it is a stop-and-ask, not a gap to fill.
+site says to everyone else. And everything you may state as fact about Enkefalos is in
+[docs/OVERVIEW.md](docs/OVERVIEW.md) §1, which is two sentences long: the site is a front page, not a
+pitch, and anything beyond that record is a stop-and-ask, not a gap to fill.
 
 **About to build a page?** The look is
 [docs/charter/glasswing-visual-language.md](docs/charter/glasswing-visual-language.md), formalised
-from Anthropic's Project Glasswing page. Reference roles, never values.
+from Anthropic's Project Glasswing page. The theme is **ivory**. Reference roles, never values, and
+build from §10's token file rather than §2.1's table — the table transcribes the source, and the
+source has two contrast defects that land on the light theme.
 
 **About to commit?** Commits here are authored by the principal, the human answerable for the change,
 never by the agent that wrote it. Set `user.name` and `user.email` accordingly, and add no

@@ -5,13 +5,22 @@ contributor, agent or human. `CLAUDE.md` points here; it holds no rules of its o
 
 ## What this project is
 
-**Enkefalos** — the website at `enkefalos.co.uk`, served from this repository by Vercel, and the host
-for the images used in the principal's email signature.
+**Enkefalos Holdings Ltd** is a consultancy and IT contractor for enterprise customers, currently
+partnered with Arthur J. Gallagher and Gallagher Specialty to build Manifest.
 
-**What Enkefalos does as a business is not written down anywhere in this repository.** Until the
-principal writes it down, no agent may state it in copy, in a meta description, in an alt attribute
-or in a commit message. This is a stop-and-ask, not a gap to fill with a plausible sentence. It is
-the single most likely way for an agent to put an untruth on a public site carrying someone's name.
+**This repository is the website at `enkefalos.co.uk`**, served by Vercel, and the host for the
+images used in the principal's email signature.
+
+**The site is a front page and nothing more.** Its purpose is that a person who has heard of
+Enkefalos can understand what it is. It is not advertising and it is not a pitch, and saying less
+than it could is the intended outcome rather than a draft of a fuller one.
+
+**Everything Enkefalos-specific an agent may write is in
+[`docs/OVERVIEW.md`](docs/OVERVIEW.md) §1, and it is two sentences long.** Anything beyond it — a
+services list, a case study, a testimonial, a call to action, a claim about scale or history — is a
+stop-and-ask, not a gap to fill with a plausible sentence. Inventing one is the single most likely
+way for an agent to put an untruth on a public site carrying someone's name. **The Gallagher
+partnership is recorded but not cleared for publication**; see the overview §5.
 
 **Two things about this repository are unusual and govern almost everything else.**
 
@@ -146,6 +155,7 @@ a framework, a structural decision the charter is silent on, or anything outward
 
 | What                                                        | Where                                                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| What Enkefalos is, what is decided, what is open            | [`docs/OVERVIEW.md`](docs/OVERVIEW.md)                                                   |
 | The engineering charter — directives, protocol, meta        | [`docs/charter/CHARTER.md`](docs/charter/CHARTER.md)                                     |
 | The design rules — structure, naming, failure, assets, floors | [`docs/charter/engineering-practices.md`](docs/charter/engineering-practices.md)         |
 | The house voice for anything the site says                  | [`docs/charter/public-copy-style.md`](docs/charter/public-copy-style.md)                  |

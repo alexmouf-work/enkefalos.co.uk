@@ -18,11 +18,11 @@ the seams rather than guess at them.
 everything the deployment serves is public the moment it is built. There is no staging grace period
 in this document, and no "nobody will look at it yet".
 
-**What this project is.** The website for Enkefalos, served from `enkefalos.co.uk` on Vercel, and
-the host for the images used in the principal's email signature. **What Enkefalos does as a business
-is not recorded anywhere in this repository, and this charter does not invent it.** Until the
-principal writes it down, no agent may state it in copy, in a meta description, or in a commit
-message. See §6.3 — this is a stop-and-ask, not a gap to be filled with a plausible sentence.
+**What this project is.** The website for Enkefalos Holdings Ltd, served from `enkefalos.co.uk` on
+Vercel, and the host for the images used in the principal's email signature. What the business is,
+what the site is for, and what has been decided are in [`../OVERVIEW.md`](../OVERVIEW.md). **What
+that document records is short, and it is the whole of what an agent may state as fact.** Anything
+beyond it is a stop-and-ask under §6.3, not a gap to be filled with a plausible sentence.
 
 ---
 
@@ -270,8 +270,11 @@ answerable is reviewing on a budget.
 Stop and ask the principal, in every one of these cases. Do not proceed on a best guess.
 
 - **A new dependency** of any kind, including a development dependency.
-- **A statement of fact about Enkefalos** — what it does, who it serves, what it has done — that is
-  not already written down in this repository or given to you by the principal in the same session.
+- **A statement of fact about Enkefalos** — what it does, who it serves, what it has done — that
+  goes beyond [`../OVERVIEW.md`](../OVERVIEW.md) §1 or what the principal has given you in the same
+  session. **Naming a client in published copy is a separate stop-and-ask** even where the
+  relationship is recorded, because publishing it is a commercial decision and possibly the client's
+  to make.
 - **Moving, renaming or deleting anything that has been published**, above all an image under the
   email-signature asset path.
 - **Anything that changes a URL**, including a route, a redirect, a canonical tag or a file name.
