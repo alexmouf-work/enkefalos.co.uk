@@ -83,14 +83,27 @@ language document §2.6.
 
 ### 5.1 Collected
 
-| Path                        | Size       | Notes                                                       |
-| --------------------------- | ---------- | ------------------------------------------------------------ |
-| `brand/logo-lockup.png`     | 300 × 99   | Transparent, single colour `#004235`. Displayed at 150 × 50. |
-| `signature/strip-green.png` | 1200 × 160 | Displayed at 600 × 80.                                       |
-| `signature/strip-light.png` | 1200 × 160 | Displayed at 600 × 80.                                       |
+| Path                        | Size        | Notes                                                       |
+| --------------------------- | ----------- | ------------------------------------------------------------ |
+| `brand/logo-lockup.png`     | 300 × 99    | Transparent, single colour `#004235`. Displayed at 150 × 50. |
+| `signature/strip-green.png` | 1200 × 160  | Displayed at 600 × 80.                                       |
+| `signature/strip-light.png` | 1200 × 160  | Displayed at 600 × 80.                                       |
+| `assets/hero-sps-1200.avif` | 1200 × 675  | Hero photograph, 79.2 KB.                                    |
+| `assets/hero-sps-1800.avif` | 1800 × 1012 | Hero photograph, 169.4 KB. The step a typical laptop takes.  |
+| `assets/hero-sps-2400.avif` | 2400 × 1350 | Hero photograph, 284.0 KB.                                   |
+| `assets/hero-sps-1600.jpg`  | 1600 × 900  | Fallback for browsers without AVIF, 294.6 KB.                |
 
-All three are already at twice their display size, which is what
+The three signature and brand images are at twice their display size, which is what
 [`charter/engineering-practices.md`](charter/engineering-practices.md) §7 A5 requires.
+
+**Every image here carries no metadata of any kind.** The photographs supplied on 20 August 2026
+held no EXIF, no GPS and no colour profile, only an eighteen-byte JFIF header, so the
+full-resolution masters were stripped **losslessly** by removing that segment rather than by
+re-encoding: the decoded pixels are byte-identical to what was supplied. The derivatives are
+re-encoded from those masters and were verified to carry no `APPn` or comment segment.
+
+**A second photograph was supplied and is not used.** It shows identifiable people, which §3
+forbids. It was stripped on the same terms and returned to the principal rather than committed.
 
 ### 5.2 Held back deliberately
 

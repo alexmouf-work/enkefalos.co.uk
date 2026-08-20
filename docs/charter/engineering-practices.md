@@ -633,13 +633,28 @@ rather than being quietly ignored.
 | CSS                       | 30 KB compressed                                          |
 | JS                        | 30 KB compressed                                          |
 | Fonts                     | 100 KB total, subset, `woff2`, at most two faces          |
-| Images, per page          | 300 KB total                                              |
+| Images, per page          | 350 KB total                                              |
 | Requests, per page        | 20                                                        |
 | Largest Contentful Paint  | under 1.5s on a mid-range mobile over 4G                  |
 | Cumulative Layout Shift   | under 0.05                                                |
 
+**The image budget was 300 KB and was raised to 350 KB on 20 August 2026**, when a full-bleed hero
+photograph was added to a page designed without one. It is recorded rather than quietly exceeded,
+because a budget that moves silently the first time it binds was never a budget. What the page
+actually costs at each step: **187 KB** at the 1800px AVIF, **301 KB** at the 2400px AVIF, **312 KB**
+for a browser taking the JPEG fallback. The typical laptop is served the first of these.
+
 **PF2 — Every `<img>` carries `width` and `height` or an `aspect-ratio`.** Layout shift is a defect,
 not a taste.
+
+**PF2a — A photograph is served as AVIF with a JPEG fallback**, at three widths and one respectively,
+through `<picture>` and `srcset`. Never a modern format without a fallback, and never a full ladder
+in both formats.
+
+_Rationale:_ AVIF is roughly half the weight of JPEG at matched quality on photographic content,
+which is the difference between meeting PF1 and not. A browser that cannot decode AVIF is a small
+minority which does not also need a choice of widths. **This rule does not reach the signature**,
+where §7 A4 forbids anything but PNG and JPEG for a different reason entirely.
 
 **PF3 — Images below the fold are `loading="lazy"`; the largest above-the-fold image never is.**
 

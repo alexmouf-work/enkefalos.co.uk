@@ -20,7 +20,9 @@ can be rejected in one place rather than discovered in the markup.
 **There is almost nothing to say, and that is deliberate.** The principal has set the page's whole
 content: Enkefalos Solutions offers software solutions and IT contracting services, the page should
 not expand much on that, and it is not advertising. No client may be named. No face and no personal
-name appears. There are no figures to quote, no case studies, no testimonials and no photography.
+name appears. There are no figures to quote, no case studies and no testimonials. **One photograph
+was supplied on 20 August 2026 and is used, once**, as the hero establishing image; it carries no
+information and makes no claim, which is why it does not disturb any of the above.
 
 **This is the design problem, not a limitation of it.** St Paul's landing page works because it has a
 great deal to show: photographs of pupils, news, events, six profile cards, four statistics and six
@@ -73,18 +75,21 @@ Enkefalos green.
 **Tonal alternation between bands.** Adjacent bands sit on slightly different grounds so each reads
 as separate without a border.
 
-**One inverted band.** St Paul's puts its statistics in white type over a full-bleed image. Enkefalos
-has no photography and no statistics, so the equivalent is a full-bleed green band carrying a single
-statement.
+**The full-bleed banner image.** Adopted for the hero, at §5.2, and used exactly once.
+
+**One inverted band.** St Paul's puts its statistics in white type over a full-bleed photograph.
+Enkefalos has no statistics, and §5.2 forbids type over a picture, so the equivalent here is a
+full-bleed green band carrying a single statement.
 
 ### 2.3 What is taken from neither
 
 **No carousel.** Glasswing has three; they hide content behind an interaction most visitors never
 perform, and this page has less content than fits on a screen already.
 
-**No hero photograph and no image tiles.** St Paul's leads with a full-width banner image and follows
-with four photographic tiles. There are no photographs here and no faces are permitted, so the hero
-is type and the mark.
+**A hero photograph, but no image tiles and no type over a picture.** St Paul's leads with a
+full-width banner image and follows with four photographic tiles, each carrying a headline in white
+over a black scrim at 40% opacity. The banner is adopted; the tiles and the scrim are not. §5.2 says
+why, and §5.3 sets out the rule that replaces the scrim.
 
 **No navigation.** St Paul's carries a nine-item menu with multi-level dropdowns because it has
 hundreds of pages. This site has one. A navigation bar linking to nothing is furniture, and the
@@ -127,7 +132,7 @@ gone slightly wrong in printing. The colour costs a token and buys nothing.
 **Green is ink, not area, with one deliberate exception.** This is the parent project's visual language
 finding applied here: on that firm's own site the dominant navy fills under 2.3% of any screen and is
 almost entirely letterforms and small solid rectangles. The same discipline holds the green. The
-exception is the one inverted band in §5.5, which exists because the email signature already has a
+exception is the one inverted band in §5.6, which exists because the email signature already has a
 green strip and the page should look like it belongs to the same company.
 
 ### 3.3 Contrast, computed
@@ -190,7 +195,8 @@ appear at one size, in one place, and never be matched or echoed by type set in 
 
 ## 5. The page, band by band
 
-**Six bands.** Each is full-bleed; each holds its content inside a gutter of
+**Six bands**, the first of which has two parts: a photograph and the title beneath it. Each is
+full-bleed; each holds its content inside a gutter of
 `clamp(24px, 10vw, 160px)`; each is separated from its neighbour by ground tone rather than by a
 border.
 
@@ -203,24 +209,49 @@ Nothing on the right.
 **No navigation and no button**, per §2.3. A sticky masthead is also rejected: it costs vertical room
 on a phone and there is nothing in it worth following the reader down the page.
 
-### 5.2 Hero
+### 5.2 Hero — the photograph
 
-**Ivory, tall: roughly 78vh, not a forced 100vh.** Content centred horizontally, sitting slightly
-above the vertical centre.
+**Full-bleed, edge to edge, immediately under the masthead.** `aspect-ratio: 2.5 / 1` at wide
+viewports easing to `4 / 3` on a phone, with `object-fit: cover` doing the cropping, so the framing
+adapts and no crop is baked permanently into a file.
 
-- The brain mark alone, large, in green, above the title.
+**The image is `assets/hero-sps-*`**, supplied by the principal on 20 August 2026 and stripped of
+every metadata segment before it entered the repository. It is a courtyard: pale stone paving, a
+glass facade, cherry blossom, a low green hedge. **Its own palette is almost exactly the site's**,
+which is why it sits in this design rather than merely on top of it.
+
+**No type sits on it. No scrim, no gradient, no overlay of any kind.** §5.3 carries the title.
+
+**It never fades in, and it is never lazy-loaded.** It is the Largest Contentful Paint: revealing it
+on scroll would delay the metric it defines, and `loading="lazy"` on the LCP element is the same
+mistake spelled differently. It carries `fetchpriority="high"` and an explicit aspect ratio so it
+reserves its space before it arrives.
+
+**`alt=""`, and that is a decision rather than an omission.** The photograph says nothing about what
+Enkefalos does; it is establishing texture. Describing it to a screen reader would add a sentence
+about paving and blossom to a page whose whole argument is that it says little. **Naming the building
+would be worse**: it would imply an association the company does not claim, which is exactly the kind
+of unearned suggestion the public copy style exists to prevent. No caption, no credit, no label.
+
+### 5.3 Hero — the title
+
+**Ivory, directly beneath the photograph, generous.**
+
+- A green accent rule, `3px` by `40px`, centred.
 - **h1**, serif 400, up to 80px, in green: the company name.
 - **A one-line subtitle**, serif, 20px, in the body neutral, at `max-width: 34em`.
-- **A quiet scroll cue** at the foot of the band: a small green chevron or a hairline, not a button.
 
-**Why the mark is large here.** It is the only place on the page where green fills any real area on
-ivory, and it is a drawing rather than a block, so it gives the brand colour presence without
-becoming a panel. It is also the only image the page has.
+**The large mark is dropped from the hero and lives only in the masthead and the footer.** The
+photograph now does the establishing work the mark was doing, and two large objects competing at the
+top of a page with three sentences on it is exactly the furniture §1 warns against.
 
-**The hero never fades in.** It is above the fold and it is the Largest Contentful Paint; revealing it
-on scroll would delay the metric it defines and show the visitor an empty screen first.
+**The type never sits over the photograph, and this is a rule rather than a preference for this
+image.** The parent project's visual language records it: type lives in the panel beside or beneath
+the picture, which is why that design needs no scrims and no shadows. It also removes a whole class
+of accessibility failure — a scrim is a contrast ratio that changes with every image swapped behind
+it, and this page will never have to check one.
 
-### 5.3 Statement
+### 5.4 Statement
 
 **Ivory-150 `#f0eee6`, the first tonal step.** One paragraph, serif, 36px at wide viewports, centred,
 at `max-width: 20em` so it breaks over three or four lines. Green accent rule, `3px` by `40px`,
@@ -229,7 +260,7 @@ centred above it.
 **This is the whole of what the company says about itself in prose.** Everything else on the page is a
 label, a fact or a legal requirement.
 
-### 5.4 What we do — the three-up
+### 5.5 What we do — the three-up
 
 **Ivory.** A section title in sans, uppercase, centred. Below it three equal columns, collapsing to
 one on a phone.
@@ -242,7 +273,7 @@ the accent rule already does the work of marking where each column starts.
 
 **This band is where St Paul's four-up tile row is echoed and where its photography is dropped.**
 
-### 5.5 The green band
+### 5.6 The green band
 
 **Full-bleed `#004235`. The only area use of the brand colour on the page.**
 
@@ -256,7 +287,7 @@ deliberate block of colour rather than as a coloured strip around a sentence.
 one moment of contrast in an otherwise pale page, and it matches the green strip already in the email
 signature, so a recipient who follows the link finds the same object.
 
-### 5.6 Footer
+### 5.7 Footer
 
 **Ivory-200 `#e8e6dc`, the darkest ivory step, so the page settles rather than stopping.**
 
@@ -297,7 +328,7 @@ fails, the page is simply a page with no animation, rather than a blank screen. 
 transition. An element that still moves 16px quickly is still an element that moves. Practices §8.1
 AC5.
 
-**The hero is excluded**, per §5.2.
+**The hero is excluded**, per §5.2 — both the photograph and the title above the fold.
 
 **Every observer is disconnected once its elements have revealed.** Practices §6 R4.
 
@@ -373,6 +404,32 @@ count.
 [`charter/engineering-practices.md`](charter/engineering-practices.md) §7 A5 requires, so nothing
 needs re-exporting for the signature.
 
+**The hero photograph**, supplied 20 August 2026 as a 4032 × 2268 phone photograph and derived into
+a responsive set. Sixteen by nine at every step, because §5.2 crops with `object-fit` rather than
+baking a crop into a permanent file.
+
+| Path                        | Size        | Weight   |
+| --------------------------- | ----------- | --------- |
+| `assets/hero-sps-1200.avif` | 1200 × 675  | 79.2 KB  |
+| `assets/hero-sps-1800.avif` | 1800 × 1012 | 169.4 KB |
+| `assets/hero-sps-2400.avif` | 2400 × 1350 | 284.0 KB |
+| `assets/hero-sps-1600.jpg`  | 1600 × 900  | 294.6 KB |
+
+**AVIF at three widths and one JPEG fallback**, rather than a full ladder in both formats. AVIF is
+carried by every current browser and is roughly half the weight; a browser that cannot decode it is
+a small minority that does not also need four widths.
+
+**Every file was stripped of all metadata.** The originals carried no EXIF, no GPS and no colour
+profile, only an eighteen-byte JFIF header, so the full-resolution masters could be stripped
+**losslessly** by removing that segment rather than by re-encoding: the decoded pixels are
+byte-identical to the originals. The derivatives above are re-encoded from those masters and were
+verified to contain no `APPn` or comment segment of any kind.
+
+**A second photograph was supplied and is not used.** It shows a university building with
+identifiable people on its steps, and §3 of the overview forbids faces. One establishing image is
+also enough for a page of this length; a second would be decoration. It was stripped on the same
+terms and returned to the principal rather than committed.
+
 ### 8.2 Held back deliberately
 
 **The signature HTML was not committed.** It carries a personal name, a personal email address and a
@@ -382,9 +439,11 @@ as a template with those four fields replaced by placeholders, on request.
 
 ### 8.3 Still needed
 
-**The mark on its own, without the wordmark**, as SVG. §5.2 sets it large in the hero, where a 300px
-PNG will not hold up, and §5.1 needs it small in the masthead. It is line art in a single colour, so
-it is the ideal case for SVG: one file at every size, recolourable by CSS, and a few kilobytes.
+**The mark on its own, without the wordmark**, as SVG. §5.1 needs it small in the masthead and §5.7
+needs the lockup in the footer, and the 300px PNG is adequate for both at those sizes. **This is
+therefore no longer blocking**, because the photograph replaced the large mark in the hero. It is
+still worth having: single-colour line art is the ideal case for SVG, giving every size from one
+small file, recolourable by CSS, and the favicon for free.
 
 **A favicon**, which the mark gives for free once it is SVG.
 
