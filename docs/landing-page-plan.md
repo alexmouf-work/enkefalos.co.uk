@@ -273,26 +273,53 @@ the accent rule already does the work of marking where each column starts.
 
 **This band is where St Paul's four-up tile row is echoed and where its photography is dropped.**
 
-### 5.6 The green band
+### 5.6 The green band — contact
 
 **Full-bleed `#004235`. The only area use of the brand colour on the page.**
 
-A single statement in serif at 36px in ivory `#faf9f5`, centred, at `max-width: 24em`. Nothing else:
-no button, no second paragraph, no rule.
+Three elements, centred, in this order:
+
+- The statement, serif at 36px in ivory `#faf9f5`, at `max-width: 24em`.
+- A label, `ENQUIRIES`, sans 600 at 12px, tracked `.13em`, in `#d1cfc5`, with capitals applied by
+  the stylesheet.
+- **The address, as a link**, serif at 28px in ivory, underlined.
 
 **Generous padding, at least 128px top and bottom at wide viewports**, so the band reads as a
 deliberate block of colour rather than as a coloured strip around a sentence.
 
-**Why it is here and not elsewhere.** It gives the page a terminal beat before the footer, it is the
-one moment of contrast in an otherwise pale page, and it matches the green strip already in the email
-signature, so a recipient who follows the link finds the same object.
+**Why contact lives here rather than in a band of its own.** §3.2 permits green as an area exactly
+once, so a second full-bleed band would break the rule that makes the colour work; and an ivory
+contact band after the green one would end the page on its quietest note rather than its strongest.
+This band was already the terminal beat. Giving it something to do makes it a conclusion rather than
+a flourish.
+
+**The link is underlined always, not on hover.** Everything on this band is ivory, so colour cannot
+distinguish the link from the text around it, and the accessibility floor forbids colour as the only
+carrier of meaning. `:focus-visible` draws a 2px ivory outline at 3px offset, which is the one place
+on the page where the focus ring is ivory rather than green.
+
+**Contrast:** ivory `#faf9f5` on green is 10.89:1 and the label at `#d1cfc5` is 7.34:1. Both clear
+AAA, so the band needs no adjustment for the link treatment.
+
+**A plain `mailto:`, not an obfuscated one.** Splitting the address across script or encoding it to
+defeat harvesters would break the rule that the page works before the script does, and would hide
+the one actionable thing on the page from anyone whose script failed. Harvesters defeat obfuscation
+anyway; the mail provider's filtering is the layer that actually addresses it.
+
+**No form, and no phone number.** A form is a data-collection surface with a privacy policy behind
+it, which the overview §3 rules out. The number is a personal mobile and the principal has excluded
+it.
 
 ### 5.7 Footer
 
 **Ivory-200 `#e8e6dc`, the darkest ivory step, so the page settles rather than stopping.**
 
-The full logo lockup at small size on the left. On the right, or beneath it on a phone: the contact
-address if one is agreed, then the legal line in sans 13px in the quiet neutral.
+The full logo lockup at small size on the left. On the right, or beneath it on a phone, the legal
+line in sans 13px in the quiet neutral. Nothing else.
+
+**The contact address is not repeated here.** It sits immediately above, in the band the reader has
+just passed through, set larger than anything the footer could give it. Repeating it in small grey
+type directly underneath would make the reader wonder which one to use.
 
 **The legal line is the only place the registered entity is named**, and it is the only text on the
 page that must be exact.
@@ -372,9 +399,16 @@ this document cannot check.
 > **ENTERPRISE DELIVERY**
 > Engagements run to the governance, security and reporting standards our clients already work to.
 
-### Green band
+### Green band, and contact
 
 > Enkefalos Solutions works with established organisations on the systems they depend on.
+>
+> **ENQUIRIES**
+>
+> hello@enkefalos.co.uk
+
+**No sentence introduces the address.** "For all enquiries, please write to" and its variants add a
+line of throat-clearing above a word that already says what it is. The label is the sentence.
 
 ### Footer
 
@@ -383,10 +417,10 @@ this document cannot check.
 
 ### What is deliberately absent
 
-No call to action, because there is nothing to convert. No "get in touch" heading, because the address
-in the footer is sufficient. No list of technologies, because naming them dates the page and invites
-a question the page does not want to answer. No claim about scale, history, team size or client
-count.
+No "get in touch" heading, because `ENQUIRIES` above the address says the same thing without the
+familiarity. No contact form, no phone number, no postal address beyond the registered office in the
+legal line. No list of technologies, because naming them dates the page and invites a question the
+page does not want to answer. No claim about scale, history, team size or client count.
 
 ---
 
@@ -466,19 +500,16 @@ message goes out with a linked image**, and from then on §7 A1 applies absolute
 
 ## 9. Decisions needed before this is built
 
-**The contact address.** The address currently used in the signature cannot go on the page, because
-it is built from the principal's first name. The recommendation is `enquiries@enkefalos.co.uk`, which needs creating. The
-alternative is a page with no contact at all, which is defensible for a front page whose purpose is
-only that someone understands what Enkefalos is.
-
-**Whether the phone number appears.** The recommendation is that it does not: it is a personal mobile,
-and a public page is a different exposure from an email signature sent to a known recipient.
+**The address must exist before the page ships.** `hello@enkefalos.co.uk` is now the page's only
+action, and an address that bounces is worse than no address at all: it is a control the page claims
+and does not have. This is the one item on the list that blocks shipping rather than blocking
+design.
 
 **Whether the copy in §7 is the right register.** It is deliberately vague and deliberately corporate,
 which is what was asked for, and it is the part of this plan most likely to be wrong in a way only the
 principal can see.
 
-**Whether three columns in §5.4 is right, or two, or none.** Three is a shape rather than a finding.
+**Whether three columns in §5.5 is right, or two, or none.** Three is a shape rather than a finding.
 Two would be the two services actually named; none would push the page to four bands and lean harder
 on §1's argument about space.
 

@@ -36,16 +36,20 @@ other function of this repository, and it is the one with the strictest rules, i
 
 ---
 
-## 3. Three prohibitions, directed by the principal
+## 3. Four prohibitions, directed by the principal
 
 **No client is named.** Not on the site, not in this repository, not in a commit message. This
 repository is public, so recording a client relationship here publishes it exactly as surely as
 putting it on the page. Copy that refers to clients does so generically: "enterprise organisations",
 "our clients".
 
-**No personal name and no face.** Not the principal's, not anyone's. This rules out the address currently used in the
-signature, which is built from the principal's first name, and it rules out photography of people
-entirely. See §6.
+**No personal name and no face.** Not the principal's, not anyone's. This rules out the address
+currently used in the signature, which is built from the principal's first name, and it rules out
+photography of people entirely.
+
+**No phone number.** Directed 20 August 2026. The number in the signature is a personal mobile, and
+a public page is a different exposure from a message sent to a known recipient. Contact is by email
+only.
 
 **Nothing is expanded on.** Every section a consultancy site conventionally carries and this one does
 not — services grid, client logos, testimonials, team, statistics, blog — is absent because it was
@@ -66,6 +70,7 @@ of it.
 | Page rhythm   | Banded, after `stpaulsschool.org.uk`, per [`landing-page-plan.md`](landing-page-plan.md) §2.2   | 20 August 2026                 |
 | Motion        | Fade and rise on scroll, one curve, per [`landing-page-plan.md`](landing-page-plan.md) §6       | 20 August 2026                 |
 | House voice   | [`charter/public-copy-style.md`](charter/public-copy-style.md)                                  | 20 August 2026                 |
+| Contact       | **hello@enkefalos.co.uk**, by email only, on the green band                                     | 20 August 2026                 |
 
 **On the theme.** The principal's words were "I lean ivory". It is recorded as the working decision
 rather than as a preference, because the whole palette and every contrast pairing follow from it and
@@ -114,9 +119,9 @@ with those fields replaced by placeholders, on request.
 
 ### 5.3 Still needed
 
-- **The mark alone, without the wordmark, as SVG.** The landing page sets it large in the hero, where
-  a 300px PNG will not hold up, and small in the masthead. It is single-colour line art, so SVG gives
-  every size from one small file.
+- **The mark alone, without the wordmark, as SVG.** No longer blocking: the hero photograph replaced
+  the large mark, and the 300px PNG is adequate for the masthead and the footer. Still worth having,
+  because single-colour line art gives every size from one small file and the favicon with it.
 - **A favicon**, which the SVG mark gives for free.
 
 ### 5.4 The path scheme, now in force
@@ -138,13 +143,10 @@ with a linked image**, and from then on §7 A1 applies absolutely: no move, no r
 
 ## 6. Open questions
 
-**The contact address.** The address currently used in the signature cannot go on the page, because
-it is built from the principal's first name, which §3 forbids. The recommendation is `enquiries@enkefalos.co.uk`, which needs creating. The alternative is a
-page with no contact at all, which is defensible for a front page whose only job is that someone
-understands what Enkefalos is.
-
-**Whether the phone number appears.** The recommendation is that it does not. It is a personal mobile,
-and a public page is a different exposure from a signature sent to a known recipient.
+**`hello@enkefalos.co.uk` must exist before the page ships.** It is the page's only action. An
+address that bounces is a control the page claims and does not have, which directive 2 forbids, and
+it is worse than carrying no address at all. This is a provisioning dependency rather than a design
+question, and it is the one item that blocks shipping.
 
 **Whether the wordmark should be redrawn.** The logo reads ENKEFALOS HOLDINGS LTD; the site speaks as
 Enkefalos Solutions. The landing page plan works around this by setting the trading name in type
