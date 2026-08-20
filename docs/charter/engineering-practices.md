@@ -8,7 +8,7 @@ protocol and the definition of done, and defers to this document for everything 
 gets misapplied at the edges, and a rule with no counterexample is a rule two competent people will
 read two ways.
 
-**Derived from the Manifest engineering charter, version 1.9.0**, §4 and §5, adapted for a static
+**Derived from the parent engineering charter, version 1.9.0**, §4 and §5, adapted for a static
 website and a public asset host. [`CHARTER.md`](CHARTER.md) §8 records what was carried, changed and
 dropped, and why.
 
@@ -172,7 +172,7 @@ site the symptom is a feature that silently stopped working months ago.
 try {
   await loadSlides();
 } catch (cause) {
-  throw new Error("carousel: slide manifest failed to load", { cause });
+  throw new Error("carousel: slide index failed to load", { cause });
 }
 ```
 
@@ -437,7 +437,7 @@ const page = pagesBySlug[slug]; // ?slug=constructor
 
 ## 7. Assets and URL permanence
 
-**This section is the one with no parent in the Manifest charter, and the one most specific to this
+**This section is the one with no parent in the parent charter's rules, and the one most specific to this
 project.** It exists because the images this repository serves are referenced from email messages
 that have already been sent and can never be edited.
 

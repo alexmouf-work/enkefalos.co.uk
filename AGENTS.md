@@ -5,8 +5,8 @@ contributor, agent or human. `CLAUDE.md` points here; it holds no rules of its o
 
 ## What this project is
 
-**Enkefalos Holdings Ltd** is a consultancy and IT contractor for enterprise customers, currently
-partnered with Arthur J. Gallagher and Gallagher Specialty to build Manifest.
+**Enkefalos Solutions**, the trading name of **Enkefalos Holdings Ltd**, offers software solutions
+and IT contracting services to enterprise organisations.
 
 **This repository is the website at `enkefalos.co.uk`**, served by Vercel, and the host for the
 images used in the principal's email signature.
@@ -16,11 +16,14 @@ Enkefalos can understand what it is. It is not advertising and it is not a pitch
 than it could is the intended outcome rather than a draft of a fuller one.
 
 **Everything Enkefalos-specific an agent may write is in
-[`docs/OVERVIEW.md`](docs/OVERVIEW.md) §1, and it is two sentences long.** Anything beyond it — a
+[`docs/OVERVIEW.md`](docs/OVERVIEW.md) §1, and it is short by design.** Anything beyond it — a
 services list, a case study, a testimonial, a call to action, a claim about scale or history — is a
 stop-and-ask, not a gap to fill with a plausible sentence. Inventing one is the single most likely
-way for an agent to put an untruth on a public site carrying someone's name. **The Gallagher
-partnership is recorded but not cleared for publication**; see the overview §5.
+way for an agent to put an untruth on a public site carrying someone's name.
+
+**No client is named, anywhere.** Not on the site, not in these documents, not in a commit message.
+The principal directed this on 20 August 2026, and this repository is public, so recording a client
+relationship here would publish it just as surely as putting it on the page.
 
 **Two things about this repository are unusual and govern almost everything else.**
 

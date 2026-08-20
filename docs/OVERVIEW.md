@@ -4,22 +4,21 @@
 for, and what has been decided. **Everything in §1 was stated by the principal and is quotable in
 copy. Nothing else is.**
 
-**Why this document exists.** Three other documents in this repository used to say that what
-Enkefalos does was recorded nowhere, and forbade agents from inventing it. This is where it is
-recorded, and that prohibition still governs everything §1 does not cover.
-
 ---
 
 ## 1. What Enkefalos is
 
 **Stated by the principal, 20 August 2026.**
 
-**Enkefalos Holdings Ltd is a consultancy and IT contractor for enterprise customers.**
+**Enkefalos Solutions is the trading name of Enkefalos Holdings Ltd.**
 
-**It is currently partnered with Arthur J. Gallagher, and with Gallagher Specialty, to build
-Manifest.**
+**It offers software solutions and IT contracting services to enterprise organisations.**
 
-That is the whole of the record. An agent may write copy from these two facts and from nothing else.
+**Enkefalos Holdings Ltd is registered in England and Wales, company number 17301883, London, United
+Kingdom.** The principal has authorised the legal name and the company number to appear on the site.
+
+That is the whole of the record, and it is short deliberately. An agent may write copy from these
+facts and from nothing else.
 
 ---
 
@@ -35,82 +34,114 @@ not a draft of a fuller one.
 other function of this repository, and it is the one with the strictest rules, in
 [`charter/engineering-practices.md`](charter/engineering-practices.md) §7.
 
-**What follows for anyone writing copy.** Do not add a services list, a case-study section, a
-testimonial, a call to action or a contact form because a consultancy site usually has one. Every one
-of those is a decision the principal has not made.
+---
+
+## 3. Three prohibitions, directed by the principal
+
+**No client is named.** Not on the site, not in this repository, not in a commit message. This
+repository is public, so recording a client relationship here publishes it exactly as surely as
+putting it on the page. Copy that refers to clients does so generically: "enterprise organisations",
+"our clients".
+
+**No personal name and no face.** Not the principal's, not anyone's. This rules out the address currently used in the
+signature, which is built from the principal's first name, and it rules out photography of people
+entirely. See §6.
+
+**Nothing is expanded on.** Every section a consultancy site conventionally carries and this one does
+not — services grid, client logos, testimonials, team, statistics, blog — is absent because it was
+decided against, not because it is outstanding. Adding one is a change to the plan, not a completion
+of it.
 
 ---
 
-## 3. What has been decided
+## 4. What has been decided
 
-| Decision                | Value                                    | Decided                        |
-| ----------------------- | ---------------------------------------- | ------------------------------ |
-| Domain                  | `enkefalos.co.uk`                        | Before this repository existed |
-| Hosting                 | Vercel                                   | Before this repository existed |
-| Visual system           | Glasswing, per [`charter/glasswing-visual-language.md`](charter/glasswing-visual-language.md) | 20 August 2026 |
-| Theme                   | **Ivory**, the light theme               | 20 August 2026                 |
-| House voice             | [`charter/public-copy-style.md`](charter/public-copy-style.md) | 20 August 2026 |
+| Decision      | Value                                                                                        | Decided                        |
+| ------------- | -------------------------------------------------------------------------------------------- | ------------------------------ |
+| Domain        | `enkefalos.co.uk`                                                                              | Before this repository existed |
+| Hosting       | Vercel                                                                                         | Before this repository existed |
+| Visual system | Glasswing, per [`charter/glasswing-visual-language.md`](charter/glasswing-visual-language.md)   | 20 August 2026                 |
+| Theme         | **Ivory**, the light theme                                                                     | 20 August 2026                 |
+| Brand colour  | **Enkefalos green `#004235`**, read from the logo file                                         | 20 August 2026                 |
+| Page rhythm   | Banded, after `stpaulsschool.org.uk`, per [`landing-page-plan.md`](landing-page-plan.md) §2.2   | 20 August 2026                 |
+| Motion        | Fade and rise on scroll, one curve, per [`landing-page-plan.md`](landing-page-plan.md) §6       | 20 August 2026                 |
+| House voice   | [`charter/public-copy-style.md`](charter/public-copy-style.md)                                  | 20 August 2026                 |
 
 **On the theme.** The principal's words were "I lean ivory". It is recorded as the working decision
-rather than as a preference, because the whole palette, every contrast pairing and the illustration
-treatment follow from it and cannot be left open. It is one attribute to change if the lean turns out
-to be wrong, which is the point of the theme mechanism in the visual language document §2.1.
+rather than as a preference, because the whole palette and every contrast pairing follow from it and
+cannot be left open. It is one attribute to change if the lean turns out to be wrong, which is the
+point of the theme mechanism in the visual language document §2.1.
+
+**On the green.** `#004235` was read from `brand/logo-lockup.png`, where it is the only colour, and
+confirmed against `signature/strip-green.png`, where it is 92% of the pixels. It is not sampled by
+eye. How it may be used, and the measured reason it may not be used for body copy, are in the visual
+language document §2.6.
 
 ---
 
-## 4. Assets
+## 5. Assets
 
-**Nothing has been collected yet.** The logo and the email signature strip exist in a Claude
-conversation the principal shared on 20 August 2026, which this session could not read: the share
-page renders its content from an API that refuses unauthenticated requests, and the browser in this
-environment has no working outbound route. They are still to be supplied.
+### 5.1 Collected
 
-### 4.1 The proposed path scheme, awaiting approval
+| Path                        | Size       | Notes                                                       |
+| --------------------------- | ---------- | ------------------------------------------------------------ |
+| `brand/logo-lockup.png`     | 300 × 99   | Transparent, single colour `#004235`. Displayed at 150 × 50. |
+| `signature/strip-green.png` | 1200 × 160 | Displayed at 600 × 80.                                       |
+| `signature/strip-light.png` | 1200 × 160 | Displayed at 600 × 80.                                       |
 
-**This is a proposal, not a decision, and it is here because
-[`charter/CHARTER.md`](charter/CHARTER.md) §6.3 makes a URL scheme a stop-and-ask.** It is worth
-settling before the first image is served, because directive 3 makes every path permanent from the
-moment it reaches an outgoing email.
+All three are already at twice their display size, which is what
+[`charter/engineering-practices.md`](charter/engineering-practices.md) §7 A5 requires.
+
+### 5.2 Held back deliberately
+
+**The signature HTML was supplied and was not committed.** It carries a personal name, a personal
+email address and a personal mobile number, and this repository is public with a permanent history.
+Directive 1 outranks everything, and §3 forbids the name separately. It can be committed as a template
+with those fields replaced by placeholders, on request.
+
+### 5.3 Still needed
+
+- **The mark alone, without the wordmark, as SVG.** The landing page sets it large in the hero, where
+  a 300px PNG will not hold up, and small in the masthead. It is single-colour line art, so SVG gives
+  every size from one small file.
+- **A favicon**, which the SVG mark gives for free.
+
+### 5.4 The path scheme, now in force
 
 ```
-/signature/<name>.png     referenced by email; stable path, short cache, bytes replaceable
-/brand/<name>.<ext>       the logo and its variants, for use on the site and by third parties
-/assets/<name>.<hash>.<ext>   everything the site itself loads; fingerprinted, cached immutably
+/brand/<name>.<ext>            referenced externally; stable path, short cache, bytes replaceable
+/signature/<name>.png          referenced by email; same rules, and the strictest case of them
+/assets/<name>.<hash>.<ext>    loaded by the site itself; fingerprinted, cached immutably
 ```
 
-**Three properties this buys.**
+**The two rules are opposite and each is catastrophic in the other's place**; the reason is in the
+practices document §7 A2.
 
-**The permanent things are visibly separate from the disposable ones.** `/signature/` and `/brand/`
-are promises; `/assets/` is regenerable. A contributor can see which is which from the path alone,
-which is what stops the wrong caching rule being applied to the wrong file.
-
-**A signature image is correctable.** The path is stable and the cache is short, so replacing the
-bytes reaches people. The limit on that is stated in the practices document §7 A7 and is not repeated
-here.
-
-**No name carries a date or a version.** `wordmark.png`, never `wordmark-2026.png`. A version in a
-path is a promise to rename it later, and renaming is the one thing directive 3 forbids outright.
-
-### 4.2 What is needed to proceed
-
-- **The Enkefalos logo**, as a source file rather than as markup: SVG for the site, and the
-  dimensions it is meant to be read at.
-- **The email signature strip**, as its HTML, and the image assets it references.
-- **Approval of the path scheme above**, or a different one.
+**No path is load-bearing yet.** Nothing has been deployed, and the signature currently embeds its
+images as base64 rather than linking them. **That stops being true the first time a message goes out
+with a linked image**, and from then on §7 A1 applies absolutely: no move, no rename, no delete.
 
 ---
 
-## 5. Open questions
+## 6. Open questions
 
-**Whether the Gallagher partnership is published.** It is recorded here as a fact about the business,
-which is a different act from putting a client's name on a public website. That is a commercial
-decision and possibly one requiring the client's agreement, so no copy states it until the principal
-says it may.
+**The contact address.** The address currently used in the signature cannot go on the page, because
+it is built from the principal's first name, which §3 forbids. The recommendation is `enquiries@enkefalos.co.uk`, which needs creating. The alternative is a
+page with no contact at all, which is defensible for a front page whose only job is that someone
+understands what Enkefalos is.
 
-**Whether the site speaks as "we" or as one person.** The house voice assumes a firm.
-[`charter/public-copy-style.md`](charter/public-copy-style.md) §1 flags this, and Enkefalos Holdings
-Ltd being a company does not settle it, because a one-person company can credibly write either way.
+**Whether the phone number appears.** The recommendation is that it does not. It is a personal mobile,
+and a public page is a different exposure from a signature sent to a known recipient.
 
-**Whether the inherited voice is the right one.** It is derived from a marine insurance publication.
-It is corporate, plain and unhurried, which suits a front page that is deliberately saying little,
-but it was chosen for a different firm.
+**Whether the wordmark should be redrawn.** The logo reads ENKEFALOS HOLDINGS LTD; the site speaks as
+Enkefalos Solutions. The landing page plan works around this by setting the trading name in type
+beside the bare mark and reserving the full lockup for the footer, where the legal entity belongs. A
+lockup drawn for the trading name would be better and is not needed to proceed.
+
+**Whether the site speaks as "we" or as one person.** The house voice assumes a firm. The draft copy
+uses "we". A company being a company does not settle it, because a one-person company can credibly
+write either way.
+
+**Whether the inherited voice is the right one.** It is derived from one firm's professional-services
+publication. It is corporate, plain and unhurried, which suits a front page that is deliberately
+saying little, but it was chosen for a different firm.

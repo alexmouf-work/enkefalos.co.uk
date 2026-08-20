@@ -6,10 +6,10 @@
 alike. Every rule carries the reason it exists, because a rule whose rationale is unknown gets
 misapplied at the edges.
 
-**Where it comes from.** This charter is derived from the Manifest engineering charter, version
+**Where it comes from.** This charter is derived from the parent engineering charter, version
 1.9.0, 18 August 2026, which is itself derived from a named source harvest and a study of four
-production codebases. The Manifest charter governs a confidential platform holding a marine
-broker's book; this one governs a public website. The two projects share a principal and a house
+production codebases. That charter governs a confidential internal platform; this one governs a
+public website. The two projects share a principal and a house
 style, and share nothing else about their risk. **Section 8 records exactly what was carried over,
 what was changed, and what was dropped**, so that a reader who knows the parent document can see
 the seams rather than guess at them.
@@ -163,7 +163,7 @@ follow these.
 
 ## 3. Mechanical rules — none exist yet
 
-**This section states what no tool currently checks.** The Manifest charter's equivalent section is
+**This section states what no tool currently checks.** The parent charter's equivalent section is
 a table of configured, tested enforcement. This repository has none of it: at version 1.0.0 there is
 no `package.json`, no linter, no formatter, no test runner and no CI workflow. Writing a table here
 that implied otherwise would break the Tier 0 rule about claiming controls that do not exist, in the
@@ -193,7 +193,7 @@ here rather than discovered later.
 - **Formatting is never a review topic.** If a reviewer is discussing whitespace, a config is
   missing.
 - **Nothing is written into this table before it has been seen to fail.** A rule stated here that
-  has never been pointed at a deliberate violation is a rule nobody has tested, and the Manifest
+  has never been pointed at a deliberate violation is a rule nobody has tested, and the parent project
   project found three of its own checks silently matching nothing the first time it looked.
 
 ---
@@ -291,7 +291,7 @@ Stop and ask the principal, in every one of these cases. Do not proceed on a bes
 
 ### 6.4 When the charter is silent
 
-In order: follow the parent document, the Manifest engineering charter, where its rule transfers;
+In order: follow the parent document, the parent engineering charter, where its rule transfers;
 failing that, choose the most reversible option — judged by three proxies, in order: **no URL
 changes**, **no new file that must be served**, **fewest places that would have to change to undo
 it**; then record the decision and its reasoning in the change description. If the decision is
@@ -305,7 +305,7 @@ amendment under §7.2.
 
 ### 6.5 Writing
 
-**Carried from the Manifest charter §6.5 substantially unchanged**, because it governs how an agent
+**Carried from the parent charter §6.5 substantially unchanged**, because it governs how an agent
 writes to this principal, and the principal is the same person.
 
 Describe your change in your own words, plainly, and do not paste unreviewed generated prose into a
@@ -443,7 +443,7 @@ for a new or removed rule, patch for wording that does not change meaning.
 
 | Version | Date       | Change                                                                                                                                                                                                                                                                                        |
 | ------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0.0   | 2026-08-20 | First issue. Derived from the Manifest engineering charter 1.9.0 at the principal's direction, with the prime directives rewritten for a public website and a public asset host, the mechanical rules section stated as unbuilt, and the design rules moved to a companion document. §8 records the derivation. |
+| 1.0.0   | 2026-08-20 | First issue. Derived from the parent engineering charter 1.9.0 at the principal's direction, with the prime directives rewritten for a public website and a public asset host, the mechanical rules section stated as unbuilt, and the design rules moved to a companion document. §8 records the derivation. |
 
 ### 7.2 Amendment process
 
@@ -477,7 +477,7 @@ rule is re-examined.
 
 ---
 
-## 8. Derivation from the Manifest charter
+## 8. Derivation from the parent charter
 
 **Recorded so the seams are visible.** A reader who knows the parent document should be able to see
 what changed and why, rather than reverse-engineering it from the differences.
@@ -496,37 +496,37 @@ stop-and-ask triggers, the silence procedure, the writing rules, the checklist, 
 
 ### 8.2 Changed
 
-**Directive 1 changed meaning.** In Manifest, confidentiality means Gallagher-private data must not
+**Directive 1 changed meaning.** In the parent project, confidentiality means client-private data must not
 reach a server that could read it, and the enemy is an honest-but-curious operator. Here it means
 nothing private may reach a repository and a deployment that are both public by construction, and
-the enemy is an accident. Same word, different mechanism, and the Manifest reasoning about encrypted
+the enemy is an accident. Same word, different mechanism, and the parent project's reasoning about encrypted
 planes transfers not at all.
 
-**Directive 2 narrowed from correctness to truth.** Manifest's correctness directive is about a
+**Directive 2 narrowed from correctness to truth.** The parent charter's correctness directive is about a
 program computing the right answer and refusing to present a partial one as complete. This site
 computes almost nothing. What it does is make public statements under the principal's name, so the
 directive that survives is the honesty half.
 
 **Directive 3 is new and has no parent.** URL permanence matters here in a way it does not in
-Manifest, because an image in an email signature is referenced by messages that have already been
+the parent project, because an image in an email signature is referenced by messages that have already been
 sent and can never be edited. It is placed above simplicity because a broken image in three years of
 correspondence is not recoverable by any later tidiness.
 
-**Performance moved out of the ordering and became a floor**, alongside accessibility. In Manifest
+**Performance moved out of the ordering and became a floor**, alongside accessibility. In the parent project
 performance is directive 4 because there are stated scale targets that genuinely trade against other
 things. Here the budgets are a gate: a page that misses them is unfinished, so there is nothing to
 trade.
 
-**Accessibility is new.** Manifest is an internal tool behind an admission system; this is a public
+**Accessibility is new.** The parent project is an internal tool behind an admission system; this is a public
 website in the United Kingdom. The floor is stated as a floor rather than a directive for the same
 reason performance is.
 
-**The mechanical rules section inverted.** In Manifest it is a table of enforcement that was
+**The mechanical rules section inverted.** In the parent project it is a table of enforcement that was
 observed to fail before it was written down. Here it is a specification of enforcement that does not
 yet exist, and says so in its heading, because the alternative would be this charter breaking its own
 honesty rule on its own second page.
 
-**The design rules moved to a companion document.** Manifest keeps them in §4 of the charter. Here
+**The design rules moved to a companion document.** The parent charter keeps them in §4 of the charter. Here
 they are large enough, and different enough in kind, that keeping them separate is the simpler
 arrangement — and the charter is what an agent must hold in context, while the practices are what it
 consults.
@@ -554,6 +554,6 @@ calling a change done, which is what a static site can actually support.
 no shared mutable state across an `await` in a site that runs a few hundred lines of progressive
 enhancement.
 
-**The reference to `plans.csv`, the roadmap and `docs/architecture/`.** Those are Manifest's
+**The reference to `plans.csv`, the roadmap and `docs/architecture/`.** Those are the parent project's
 artefacts. Where this project needs a ledger, it gets one, and this charter is amended to name it
 rather than pointing at another repository's.

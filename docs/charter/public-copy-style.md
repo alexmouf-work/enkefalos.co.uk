@@ -4,14 +4,13 @@
 who is not building it: page copy, headings, link text, alt text, meta descriptions, error pages,
 and anything published under the Enkefalos name.
 
-**The source is Gallagher Specialty's own writing**, not a style invented here: _The P&I Pre-Renewal
-Review 2025_. This document is carried across from the Manifest repository, where it was derived from
-that publication and has been in force since 18 August 2026. It arrives here because the principal
-directed it, and it arrives substantially unchanged, because a house voice that is rewritten per
-project is not a house voice.
+**The source is a real professional-services publication**, not a style invented here. This document
+is carried across from the parent repository, where it was derived from that publication and has been
+in force since 18 August 2026, and where the publication is named. It arrives here substantially
+unchanged, because a house voice that is rewritten per project is not a house voice.
 
-**Two things about that inheritance, stated plainly.** The source is a marine insurance publication
-and the voice is corporate British professional-services. Whether that is the right voice for
+**Two things about that inheritance, stated plainly.** The voice is corporate British
+professional-services, taken from one firm's publication and not written for this one. Whether that is the right voice for
 Enkefalos is the principal's call and not an agent's: if it is not, this document is amended under
 [`CHARTER.md`](CHARTER.md) §7.2, and it is not quietly departed from in the meantime. And §1 assumes
 the site speaks as a firm rather than as one person; if Enkefalos speaks in the singular, that is an

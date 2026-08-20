@@ -10,7 +10,7 @@ from the page's served HTML and from its five stylesheet chunks under
 
 **Method, and its limit, stated once and not repeated.** Everything here is measured from source
 rather than from rendered pixels, which makes the values exact and makes coverage claims weaker than
-the Gallagher study's: where that document could say a colour filled 2.29% of a viewport, this one
+the parent study's: where that document could say a colour filled 2.29% of a viewport, this one
 can say only that a colour is declared and never referenced. Where a claim rests on absence, the
 claim says so. Nothing below is inferred from a screenshot.
 
@@ -161,6 +161,54 @@ mechanism: symmetry in the token names is not symmetry in the contrast.**
 makes AA a floor, so neither defect is inherited. The control border is darkened until it reaches
 3:1 against the surface behind it, and the ivory tertiary is stepped to `--slate-600` (6.26:1). §10's
 token file makes both changes and marks them.
+
+---
+
+### 2.6 The Enkefalos accent — a deliberate divergence
+
+**§2.3 is the source's finding, not this site's rule.** Glasswing declares nine accents and paints
+none. Enkefalos paints exactly one, and painting it is the point: the principal has set ivory and
+Enkefalos green as the two colours of the site.
+
+**Enkefalos green is `#004235`.** Read from `../../brand/logo-lockup.png`, where it is the only
+colour present, and confirmed against `../../signature/strip-green.png`, where it is 92% of the
+pixels. Not sampled by eye.
+
+**The measured finding that decides how it may be used.**
+
+| Pairing                              | Ratio    |
+| ------------------------------------ | -------- |
+| Green on ivory `#faf9f5`             | 10.89:1  |
+| Green on ivory-150 `#f0eee6`         | 9.87:1   |
+| Ivory `#faf9f5` on green             | 10.89:1  |
+| Ivory-200 `#e8e6dc` on green         | 9.17:1   |
+| `#d1cfc5` on green                   | 7.34:1   |
+| **Green against body neutral `#3d3d3a`** | **1.05:1** |
+
+**The first five say green is an excellent ink** and that an inverted green band needs no adjustment
+at all, because the relationship is symmetric at 10.89:1 in both directions. The two-step text rule
+survives inversion: ivory heading, ivory-200 body, `#d1cfc5` for quiet type.
+
+**The last one is the rule.** `#004235` and `#3d3d3a` differ by 5% in luminance. At body size they
+are indistinguishable, so green body copy does not read as green, it reads as black that has gone
+wrong in printing. **Green reads as green only at scale.**
+
+| Green is                                                     | Green is not                       |
+| ------------------------------------------------------------ | ---------------------------------- |
+| Display and heading type, roughly 20px and above              | Body copy, at any size             |
+| The logo and the mark                                         | Small print, captions, legal lines |
+| The `3px` accent rule                                         | Link colour inside a paragraph     |
+| The ground of one full-bleed band, with ivory type on it      | A background for large areas       |
+
+**Green is ink, not area, with one deliberate exception.** The parent project's visual language
+established that on the firm it studied, the dominant colour filled under 2.3% of any screen and was
+almost entirely letterforms and small solid rectangles. The same discipline holds here. The single
+exception is one full-bleed band, which exists because the email signature already carries a green
+strip and the page should look like it belongs to the same company.
+
+**One derived step, reasoned rather than measured.** `--green-600 #0a5646`, 8.19:1 on ivory, for hover
+and pressed states, since `#004235` is too dark to darken usefully. It is a starting position to be
+checked in use.
 
 ---
 
@@ -607,6 +655,10 @@ because a page that cannot be inverted is a page whose colours are not really to
   --slate-850: #1f1e1d;
   --slate-950: #141413;
 
+  /* The Enkefalos accent. §2.6: ink and rule, never body copy. */
+  --green: #004235; /* 10.89:1 on ivory, both directions */
+  --green-600: #0a5646; /* 8.19:1 — hover and pressed. Reasoned, not measured. */
+
   /* Type. Self-hosted, subset, woff2. Practices §5 D3 forbids a third-party host. */
   --font-read: "Source Serif 4", Charter, Georgia, serif;
   --font-structure: Inter, system-ui, sans-serif;
@@ -671,7 +723,8 @@ because a page that cannot be inverted is a page whose colours are not really to
   --background-tertiary: var(--slate-200);
   --border-control: var(--slate-500); /* 3.47:1 on page, 3.15:1 on control fill */
   --border-rule: var(--slate-150); /* decorative only; carries no contrast duty */
-  --button-primary-background: var(--slate-950);
+  --accent: var(--green); /* headings, marks, rules. §2.6 forbids it on body copy. */
+  --button-primary-background: var(--green);
   --button-primary-foreground: var(--slate-050);
 }
 
