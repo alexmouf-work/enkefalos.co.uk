@@ -478,6 +478,15 @@ unresolvable. A short-cached fingerprinted asset throws away the only benefit fi
 /assets/site.a1b2c3d4.css          max-age=31536000     fingerprinted, immutable
 ```
 
+**The immutable half has a precondition: a build step that maintains the hash.** Stated here because
+this project does not have one, and the rule read without it points at the worse of the two failures.
+A hand-maintained hash fails by omission: change the file, forget the rename, and every visitor holds
+a stale copy under an immutable header for up to a year, with no way to reach them. A moderate cache
+on an unfingerprinted path fails the other way, and waiting fixes it. **So where no build step
+exists, an internal asset takes a moderate cache and no fingerprint**, and that choice is recorded
+where it is made rather than assumed. The site does this in `website/README.md`, and reverts to the
+rule as written the moment a build step lands.
+
 ```
 /signature/wordmark.png            max-age=31536000, immutable
 # the mobile number in it is now unfixable for a year, in every mail client that cached it

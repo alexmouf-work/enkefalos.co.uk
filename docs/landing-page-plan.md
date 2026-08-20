@@ -1,8 +1,12 @@
 # Landing page design plan
 
-**Status: proposed, 20 August 2026. Nothing is built.** This document is the conceptual design of
-the single page at `enkefalos.co.uk`, for the principal to approve, amend or reject before any markup
-exists.
+**Status: built, 20 August 2026.** This document is the design of the single page at
+`enkefalos.co.uk`. It was written before the markup and the markup follows it; where the two ever
+disagree, **the site is what ships and this document is what is wrong**, and it should be corrected
+rather than the site bent to match it.
+
+**The site is in [`../website/`](../website/), and it is not deployed.** Vercel is pointed at that
+folder by the principal. `website/README.md` covers working on it.
 
 **Its three sources.** The visual system is
 [`charter/glasswing-visual-language.md`](charter/glasswing-visual-language.md), formalised from
@@ -10,8 +14,8 @@ Anthropic's Project Glasswing page. The page rhythm is taken from St Paul's Scho
 `stpaulsschool.org.uk`, at the principal's direction, read from its served HTML and its theme
 stylesheet. The voice is [`charter/public-copy-style.md`](charter/public-copy-style.md).
 
-**Every line of copy below is a draft for approval, not a decision.** §7 sets it out in full so it
-can be rejected in one place rather than discovered in the markup.
+**The copy in §7 is what the page now says.** It is set out here in full so it can be judged in one
+place rather than read out of the markup.
 
 ---
 

@@ -71,7 +71,8 @@ of it.
 | Page rhythm   | Banded, after `stpaulsschool.org.uk`, per [`landing-page-plan.md`](landing-page-plan.md) §2.2   | 20 August 2026                 |
 | Motion        | Fade and rise on scroll, one curve, per [`landing-page-plan.md`](landing-page-plan.md) §6       | 20 August 2026                 |
 | House voice   | [`charter/public-copy-style.md`](charter/public-copy-style.md)                                  | 20 August 2026                 |
-| Contact       | **hello@enkefalos.co.uk**, by email only, on the green band                                     | 20 August 2026                 |
+| Contact       | **hello@enkefalos.co.uk**, by email only, on its own band                                       | 20 August 2026                 |
+| Deploy root   | `website/`, pointed at by Vercel                                                                | 20 August 2026                 |
 
 **On the theme.** The principal's words were "I lean ivory". It is recorded as the working decision
 rather than as a preference, because the whole palette and every contrast pairing follow from it and
@@ -91,14 +92,14 @@ language document §2.6.
 
 | Path                        | Size        | Notes                                                       |
 | --------------------------- | ----------- | ------------------------------------------------------------ |
-| `brand/logo-lockup.png`     | 300 × 99    | Transparent, single colour `#004235`. Displayed at 150 × 50. |
-| `signature/strip-green.png` | 1200 × 160  | Displayed at 600 × 80.                                       |
-| `signature/strip-light.png` | 1200 × 160  | Displayed at 600 × 80.                                       |
-| `assets/hero-courtyard-*.avif` | 1200, 1800, 2400 wide | Hero photograph. 79.2, 169.4, 284.0 KB.       |
-| `assets/hero-courtyard-1600.jpg` | 1600 × 900 | Hero fallback for browsers without AVIF, 294.6 KB.       |
-| `assets/panel-arcade-1200.*`   | 1200 × 675  | Carousel panel. 82.1 KB as AVIF, 176.9 KB as JPEG.        |
-| `assets/panel-court-1200.*`    | 1200 × 675  | Carousel panel. 84.1 KB as AVIF, 184.3 KB as JPEG.        |
-| `assets/panel-portico-1200.*`  | 1200 × 675  | Carousel panel. 93.7 KB as AVIF, 177.9 KB as JPEG.        |
+| `website/brand/logo-lockup.png` | 300 × 99 | Transparent, single colour `#004235`. Displayed at 150 × 50. |
+| `website/signature/strip-green.png` | 1200 × 160 | Displayed at 600 × 80.                                       |
+| `website/signature/strip-light.png` | 1200 × 160 | Displayed at 600 × 80.                                       |
+| `website/assets/hero-courtyard-*.avif` | 1200, 1800, 2400 wide | Hero photograph. 79.2, 169.4, 284.0 KB.       |
+| `website/assets/hero-courtyard-1600.jpg` | 1600 × 900 | Hero fallback for browsers without AVIF, 294.6 KB.       |
+| `website/assets/panel-arcade-1200.*` | 1200 × 675  | Carousel panel. 82.1 KB as AVIF, 176.9 KB as JPEG.        |
+| `website/assets/panel-court-1200.*` | 1200 × 675  | Carousel panel. 84.1 KB as AVIF, 184.3 KB as JPEG.        |
+| `website/assets/panel-portico-1200.*` | 1200 × 675  | Carousel panel. 93.7 KB as AVIF, 177.9 KB as JPEG.        |
 
 The three signature and brand images are at twice their display size, which is what
 [`charter/engineering-practices.md`](charter/engineering-practices.md) §7 A5 requires.
@@ -129,25 +130,37 @@ with those fields replaced by placeholders, on request.
 
 ### 5.3 Still needed
 
-- **The mark alone, without the wordmark, as SVG.** No longer blocking: the hero photograph replaced
-  the large mark, and the 300px PNG is adequate for the masthead and the footer. Still worth having,
-  because single-colour line art gives every size from one small file and the favicon with it.
-- **A favicon**, which the SVG mark gives for free.
+- **The mark alone, as SVG.** Not blocking. `website/brand/mark.png` was cut from the lockup and
+  serves the masthead at 36px, and `favicon-32.png` and `apple-touch-icon.png` were cut from the same
+  crop. An SVG would replace all three with one small file that is sharp at every size and
+  recolourable by CSS, and it is worth having whenever the source artwork surfaces.
+- **A third photograph for the carousel**, so that its three panels stop being three frames of two
+  images. One was offered on 20 August 2026 and pasted into the conversation rather than attached, so
+  its bytes never reached this session; its licence also needs settling before it is used.
 
 ### 5.4 The path scheme, now in force
+
+**Vercel's root directory is `website/`**, so a file at `website/signature/strip-green.png` serves
+at `https://enkefalos.co.uk/signature/strip-green.png`. The served URLs are unchanged by the move
+into that folder, and the move was safe because nothing had been deployed when it happened.
 
 ```
 /brand/<name>.<ext>            referenced externally; stable path, short cache, bytes replaceable
 /signature/<name>.png          referenced by email; same rules, and the strictest case of them
-/assets/<name>.<hash>.<ext>    loaded by the site itself; fingerprinted, cached immutably
+/assets/<name>.<ext>           loaded by the site itself; moderate cache, no fingerprint
 ```
+
+**`/assets/` is not fingerprinted, deliberately.** The practices document §7 A2 asks for a content
+hash and an immutable cache, and states the precondition that makes that safe: a build step to keep
+the hash correct. There is none, and a hand-maintained hash fails by omission in the worst available
+direction. `website/README.md` records the choice where it is made.
 
 **The two rules are opposite and each is catastrophic in the other's place**; the reason is in the
 practices document §7 A2.
 
 **No path is load-bearing yet.** Nothing has been deployed, and the signature currently embeds its
-images as base64 rather than linking them. **That stops being true the first time a message goes out
-with a linked image**, and from then on §7 A1 applies absolutely: no move, no rename, no delete.
+images as base64 rather than linking them. **That stops being true at the first deployment**, and
+from then on §7 A1 applies absolutely: no move, no rename, no delete.
 
 ---
 

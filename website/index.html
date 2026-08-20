@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Enkefalos Solutions</title>
+    <meta
+      name="description"
+      content="Enkefalos Solutions offers consultancy, software solutions and IT contracting for enterprise organisations."
+    />
+    <link rel="canonical" href="https://enkefalos.co.uk/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Enkefalos Solutions" />
+    <meta property="og:title" content="Enkefalos Solutions" />
+    <meta
+      property="og:description"
+      content="Consultancy, software solutions and IT contracting for enterprise organisations."
+    />
+    <meta property="og:url" content="https://enkefalos.co.uk/" />
+    <meta property="og:image" content="https://enkefalos.co.uk/assets/hero-courtyard-1200.avif" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#faf9f5" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- The two faces the page sets. Self-hosted: nothing is requested off this origin. -->
+    <link
+      rel="preload"
+      href="/assets/fonts/source-serif-4-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script>
+      /* Runs before first paint. Nothing starts hidden unless this class is present, so a
+         failed script leaves a static page rather than an empty one. */
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="masthead__in">
+        <img
+          class="masthead__mark"
+          src="/brand/mark.png"
+          alt=""
+          width="43"
+          height="36"
+        />
+        <span class="masthead__name">Enkefalos Solutions</span>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Band 2. The photograph. No type on it, no scrim: the title sits beneath. -->
+      <figure class="heroshot">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              /assets/hero-courtyard-1200.avif 1200w,
+              /assets/hero-courtyard-1800.avif 1800w,
+              /assets/hero-courtyard-2400.avif 2400w
+            "
+            sizes="100vw"
+          />
+          <img
+            src="/assets/hero-courtyard-1600.jpg"
+            alt=""
+            width="2400"
+            height="1350"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+      </figure>
+
+      <!-- Band 3. The title. Above the fold, so it never fades in. -->
+      <section class="band band--ivory">
+        <div class="band__in hero">
+          <hr class="accent" />
+          <h1 class="hero__title">Enkefalos Solutions</h1>
+          <p class="hero__sub">
+            Consultancy, software solutions and IT contracting for enterprise organisations.
+          </p>
+        </div>
+      </section>
+
+      <!-- Band 4. The only prose on the page. -->
+      <section class="band band--ivory150">
+        <div class="band__in statement" data-reveal>
+          <p>
+            We advise enterprise clients on the software they run, design and build what they do not
+            have, and provide specialist contracting alongside their own teams.
+          </p>
+        </div>
+      </section>
+
+      <!-- Band 5. Three services, one at a time, under the reader's control. -->
+      <section class="band band--ivory" aria-labelledby="what-we-do">
+        <div class="band__in services">
+          <h2 class="section-title" id="what-we-do" data-reveal>What we do</h2>
+
+          <div class="carousel" data-carousel data-reveal>
+            <div class="carousel__controls">
+              <p class="carousel__count">
+                <span data-carousel-index>1</span><span aria-hidden="true"> / 3</span>
+                <span class="visually-hidden">of 3</span>
+              </p>
+              <button
+                class="carousel__btn"
+                type="button"
+                data-carousel-prev
+                aria-label="Previous service"
+                disabled
+              >
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" aria-hidden="true">
+                  <path
+                    d="M7.5 1 1.5 7l6 6"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                class="carousel__btn"
+                type="button"
+                data-carousel-next
+                aria-label="Next service"
+              >
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" aria-hidden="true">
+                  <path
+                    d="m1.5 1 6 6-6 6"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="carousel__stage" data-carousel-stage aria-live="polite">
+              <article class="panel" data-panel>
+                <picture>
+                  <source type="image/avif" srcset="/assets/panel-arcade-1200.avif" />
+                  <img
+                    src="/assets/panel-arcade-1200.jpg"
+                    alt=""
+                    width="1200"
+                    height="675"
+                    decoding="async"
+                  />
+                </picture>
+                <hr class="accent accent--left" />
+                <h3>Consultancy</h3>
+                <p>
+                  Advice on architecture, delivery and technology decisions, given to the people who
+                  will have to live with them afterwards.
+                </p>
+              </article>
+
+              <article class="panel" data-panel>
+                <picture>
+                  <source type="image/avif" srcset="/assets/panel-court-1200.avif" />
+                  <img
+                    src="/assets/panel-court-1200.jpg"
+                    alt=""
+                    width="1200"
+                    height="675"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <hr class="accent accent--left" />
+                <h3>Software solutions</h3>
+                <p>
+                  Software specified, built and maintained around the requirements of the
+                  organisation it serves.
+                </p>
+              </article>
+
+              <article class="panel" data-panel>
+                <picture>
+                  <source type="image/avif" srcset="/assets/panel-portico-1200.avif" />
+                  <img
+                    src="/assets/panel-portico-1200.jpg"
+                    alt=""
+                    width="1200"
+                    height="675"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <hr class="accent accent--left" />
+                <h3>IT contracting</h3>
+                <p>
+                  Specialist capability provided alongside existing teams, for as long as a
+                  programme requires it.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Band 6. Three stages, numbered because the order is the argument. -->
+      <section class="band band--ivory150" aria-labelledby="how-we-work">
+        <div class="band__in approach">
+          <h2 class="section-title" id="how-we-work" data-reveal>How we work</h2>
+          <ol class="approach__grid">
+            <li class="approach__step" data-reveal>
+              <span class="approach__n" aria-hidden="true">One</span>
+              <hr class="accent accent--left" />
+              <h3>Understand</h3>
+              <p>
+                We start with the constraints an organisation already operates under: its
+                governance, its security posture, the systems it has bought and the people who
+                maintain them. Advice that ignores any of these is advice that cannot be acted on.
+              </p>
+            </li>
+            <li class="approach__step" data-reveal>
+              <span class="approach__n" aria-hidden="true">Two</span>
+              <hr class="accent accent--left" />
+              <h3>Recommend</h3>
+              <p>
+                We set out the options with their costs and their consequences, including the option
+                of changing nothing, and we say which of them we would choose. A recommendation that
+                hedges is a decision handed back to the client.
+              </p>
+            </li>
+            <li class="approach__step" data-reveal>
+              <span class="approach__n" aria-hidden="true">Three</span>
+              <hr class="accent accent--left" />
+              <h3>Deliver</h3>
+              <p>
+                We build what was agreed, to the standards the organisation already holds itself to,
+                and we hand over documentation that lets a team maintain the result without us.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Band 7. The one area use of the brand colour. -->
+      <section class="band band--green">
+        <div class="band__in closing" data-reveal>
+          <p>
+            Enkefalos Solutions works with established organisations on the systems they depend on.
+          </p>
+        </div>
+      </section>
+
+      <!-- Band 8. Inverted from the band above: ivory ground, green ink. -->
+      <section class="band band--ivory" aria-labelledby="enquiries">
+        <div class="band__in enquiries" data-reveal>
+          <hr class="accent" />
+          <h2 class="enquiries__label" id="enquiries">Enquiries</h2>
+          <a class="enquiries__mail" href="mailto:hello@enkefalos.co.uk"
+            >hello@enkefalos.co.uk</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="band band--ivory200 colophon">
+      <div class="band__in colophon__in">
+        <img
+          class="colophon__mark"
+          src="/brand/logo-lockup.png"
+          alt="Enkefalos Holdings Ltd"
+          width="150"
+          height="50"
+          loading="lazy"
+        />
+        <p>
+          Enkefalos Solutions is a trading name of Enkefalos Holdings Ltd. Registered in England and
+          Wales, company no. 17301883. London, United Kingdom.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>
