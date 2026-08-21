@@ -29,14 +29,21 @@
     <!-- The two faces the page sets. Self-hosted: nothing is requested off this origin. -->
     <link
       rel="preload"
-      href="/assets/fonts/source-serif-4-latin.woff2"
+      href="/assets/fonts/serif-display.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="/assets/fonts/inter-latin.woff2"
+      href="/assets/fonts/serif-text.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/mono.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -52,6 +59,7 @@
 
   <body>
     <a class="skip" href="#main">Skip to content</a>
+    <div class="progress" data-progress aria-hidden="true"></div>
 
     <header class="masthead">
       <div class="masthead__in">
@@ -94,6 +102,7 @@
       <section class="band band--ivory">
         <div class="band__in hero">
           <hr class="accent" />
+          <p class="eyebrow">Enterprise software and IT &middot; London</p>
           <h1 class="hero__title">Enkefalos Solutions</h1>
           <p class="hero__sub">
             Consultancy, software solutions and IT contracting for enterprise organisations.
@@ -114,7 +123,12 @@
       <!-- Band 5. Three services, one at a time, under the reader's control. -->
       <section class="band band--ivory" aria-labelledby="what-we-do">
         <div class="band__in services">
-          <h2 class="section-title" id="what-we-do" data-reveal>What we do</h2>
+          <div data-reveal>
+            <p class="eyebrow">What we do</p>
+            <h2 class="section-title" id="what-we-do">
+              Consultancy, software and contracting.
+            </h2>
+          </div>
 
           <div class="carousel" data-carousel data-reveal>
             <div class="carousel__controls">
@@ -222,9 +236,12 @@
       </section>
 
       <!-- Band 6. Three stages, numbered because the order is the argument. -->
-      <section class="band band--ivory150" aria-labelledby="how-we-work">
+      <section class="band band--green" aria-labelledby="how-we-work">
         <div class="band__in approach">
-          <h2 class="section-title" id="how-we-work" data-reveal>How we work</h2>
+          <div data-reveal>
+            <p class="eyebrow">How we work</p>
+            <h2 class="section-title" id="how-we-work">Understand, recommend, deliver.</h2>
+          </div>
           <ol class="approach__grid">
             <li class="approach__step" data-reveal>
               <span class="approach__n" aria-hidden="true">One</span>

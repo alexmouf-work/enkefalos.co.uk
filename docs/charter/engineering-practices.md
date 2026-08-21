@@ -702,7 +702,14 @@ _Rationale:_ lazily loading the element that is the Largest Contentful Paint del
 defines.
 
 **PF4 — Fonts are subset, `woff2`, self-hosted, preloaded, and declared `font-display: swap`.** At
-most two faces, and a real fallback stack behind each.
+most **two families**, and a real fallback stack behind each.
+
+**Families, not files.** Amended 21 August 2026, because the original wording said "two faces" and a
+face is not the unit that costs anything. The site ships three files from two families: a serif in
+two pinned optical cuts and a monospace. That is 74 KB, which is 23 KB less than the two files it
+replaced, so the rule's purpose is served and its wording was wrong. **The number that binds is the
+byte budget in PF1**; the family count exists to stop a page setting five unrelated voices, and it
+should be read that way.
 
 **PF5 — Nothing blocks the first paint that does not have to.** Script is `defer` or `type="module"`
 unless it must run before paint, and the one thing that legitimately must — a theme decision that

@@ -69,9 +69,14 @@ written for, the audience is wrong, not the term.
 
 ## 3. Structure
 
-**Headings are short and set in capitals.** Two to four words. Capitals are applied by the
-stylesheet, so the underlying text stays in sentence case and remains searchable, screen-readable
-and correct when copied. The Glasswing section title carried in
+**Every section is named in capitals, and the name sits above the heading rather than being it.**
+Two to four words, in the monospaced label face. The heading beneath is then free to be a sentence.
+Capitals are applied by the stylesheet either way, so the underlying text stays in sentence case and
+remains searchable, screen-readable and correct when copied.
+
+**This changed on 21 August 2026.** The rule used to put the capitals on the heading itself. A
+heading in capitals is announced; a heading in a sentence is read, and a page with three sentences on
+it cannot afford to announce any of them twice. The Glasswing section title carried in
 [`glasswing-visual-language.md`](glasswing-visual-language.md) §5.3 does exactly this, which is why
 the two documents agree without either having to yield.
 

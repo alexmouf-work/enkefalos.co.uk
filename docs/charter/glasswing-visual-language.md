@@ -200,11 +200,33 @@ wrong in printing. **Green reads as green only at scale.**
 | The `3px` accent rule                                         | Link colour inside a paragraph     |
 | The ground of one full-bleed band, with ivory type on it      | A background for large areas       |
 
-**Green is ink, not area, with one deliberate exception.** The parent project's visual language
+**Green is ink, not area, with two deliberate exceptions.** The parent project's visual language
 established that on the firm it studied, the dominant colour filled under 2.3% of any screen and was
-almost entirely letterforms and small solid rectangles. The same discipline holds here. The single
-exception is one full-bleed band, which exists because the email signature already carries a green
-strip and the page should look like it belongs to the same company.
+almost entirely letterforms and small solid rectangles. That discipline still governs the ink.
+
+**The count went from one band to two on 21 August 2026**, after a site the principal pointed at
+demonstrated the opposite approach working: a dark ground used as a primary surface, alternating
+with a pale one, rather than saved for a single moment. Two bands of green in a nine-band page is
+still restraint; it is the difference between a page with an accent and a page with a rhythm. **The
+rule that survives is that green as area is counted and argued for, not reached for** — a third band
+needs its own reason, and "it looked good on the second one" is not one.
+
+### 2.7 The optical-size axis is 60% of the file
+
+**Measured on 21 August 2026, and worth carrying to any project that reaches for a variable serif.**
+Source Serif 4's latin subset at `wght 200..400` with the `opsz` axis intact is 77 KB. The same
+subset with `opsz` pinned is 31 KB. **The axis alone costs 46 KB**, which is more than the rest of
+the font.
+
+**That is a bad trade for a page with two type sizes, and a good one for a page with twenty.** The
+resolution here was to pin the axis twice and ship two cuts, 33 KB and 18 KB, which keeps the effect
+where it is visible — a display face with finer joins at 84px, a text face with sturdier ones at
+17px — and costs 51 KB rather than 77 KB. Discrete optical cuts are also how the property worked for
+four centuries before an axis existed.
+
+**The general rule: price a variable axis before shipping it.** An axis is not free, its cost is not
+proportional to how much of it you use, and the default assumption that a variable font is smaller
+than the static instances it replaces is only true past some number of instances.
 
 **One derived step, reasoned rather than measured.** `--green-600 #0a5646`, 8.19:1 on ivory, for hover
 and pressed states, since `#004235` is too dark to darken usefully. It is a starting position to be
@@ -305,7 +327,19 @@ proportional lining figures, with ligatures. Not tabular. **This is right for a 
 sit in prose and in single-value labels, and it would be wrong for a page with a column of figures to
 align.** If this site ever sets a numeric table, that table opts into `tnum` locally.
 
-### 4.4 The uppercase section title, done correctly
+### 4.4 The uppercase label, done correctly
+
+**Where the capitals live changed on 21 August 2026.** They were on the section heading; they are now
+on a monospaced eyebrow above it, and the heading beneath is a sentence set in a light serif. The
+rule that capitals are applied by the stylesheet rather than typed is unchanged and still binds. What
+changed is which element carries them, and the reason is that a heading in capitals is announced
+where a heading in a sentence is read.
+
+**The eyebrow is also where the third type role went.** A monospaced face carrying every label,
+figure, counter and legal line is most of why a page reads as built by people who write software.
+It is the cheapest signal of that kind available and it costs 24 KB.
+
+#### The original treatment, which the eyebrow inherits
 
 The section title is stored in sentence case and set in capitals by the stylesheet:
 `text-transform: uppercase`, `letter-spacing: .03em`, `text-wrap: balance`, `text-align: center`,

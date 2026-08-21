@@ -8,6 +8,10 @@ rather than the site bent to match it.
 **The site is in [`../website/`](../website/), and it is not deployed.** Vercel is pointed at that
 folder by the principal. `website/README.md` covers working on it.
 
+**A fourth source, added 21 August 2026.** The principal pointed at a site they build with a friend
+and asked for its style to be taken up here. It is not named in this repository, per the overview §3.
+What was taken, and what it displaced, is in §10.
+
 **Its three sources.** The visual system is
 [`charter/glasswing-visual-language.md`](charter/glasswing-visual-language.md), formalised from
 Anthropic's Project Glasswing page. The page rhythm is taken from St Paul's School,
@@ -645,3 +649,63 @@ on §1's argument about space.
 **Whether the page wants a seventh band.** Six is enough for the content and gives roughly three
 screens of scroll, which is enough for the reveal in §6 to be felt. More content would need more to
 say.
+
+
+---
+
+## 10. The revision of 21 August 2026
+
+**Four things were taken from a site the principal pointed at**, and each displaced something.
+
+**A monospaced face for every label.** Eyebrows, the masthead name, service and stage labels, the
+carousel counter and the legal line all move to it. This is the single largest change and it is most
+of why the page now reads as built by people who write software. It displaced the sans entirely: the
+page went from serif plus sans to serif plus mono, with no neutral sans at all.
+
+**Capitals moved from the heading to an eyebrow above it.** Section headings are now sentences in a
+light serif; the mono eyebrow above carries the section name in capitals. A heading in capitals is
+announced, a heading in a sentence is read, and a page with this little to say cannot afford to
+announce any of it twice. The public copy style rule is unchanged in substance and now names the
+eyebrow as where the capitals live.
+
+**The display type got lighter and tighter.** The hero sets at weight 250 with `-0.028em` tracking
+where it was 400 and untracked; section titles at 300 with `-0.02em`. A light serif set loose at
+84px reads as a set of letters. Pulled in, it reads as a phrase.
+
+**The band count of green went from one to two**, and the how-we-work band inverted. The rule that
+green is area exactly once was written from a study where the dominant colour filled under 2.3% of a
+screen. The source site demonstrates the opposite working: a dark ground as a primary surface,
+alternating with a pale one. Two bands in nine is still restraint. The visual language document §2.6
+records the amendment and keeps the part that matters, which is that a third band needs its own
+argument.
+
+**One device was taken and one was left.**
+
+**Taken: the hairline grid.** The three stages sit in a grid whose 1px gaps *are* the rules, over a
+background that shows through. Cheaper than a border per cell and it never doubles at the joins.
+
+**Left: the fixed navigation that gains a background on scroll.** It is good on a site with six
+sections to jump between. This site has one page and no navigation, so a bar that followed the reader
+down it would be carrying nothing.
+
+**One thing was added that neither source has: a scroll progress rule.** Two pixels of green across
+the top, driven by a CSS scroll timeline where the browser has one and by script where it does not.
+It is the only ornament on the page and it earns its place by saying how much is left.
+
+### What this cost, measured
+
+**The font set got lighter.** Three files from two families, 74 KB, against 97 KB for the two it
+replaced. §8 of the visual language document records why: the optical-size axis was 60% of the
+variable serif's weight, so it was pinned twice and shipped as two cuts rather than carried as an
+axis.
+
+**Two defects were found and fixed while re-verifying**, neither introduced by this revision.
+
+**The skip link was positioned at `left: -9999px`**, which is the old technique and still
+participates in layout. It is now clipped instead. A skip link that widens the scrollable area of the
+page is working against the thing it exists for.
+
+**The 200% zoom check was measuring a state no browser produces.** It applied `body { zoom: 2 }`,
+which scales the layout without re-evaluating media queries. Real zoom halves the CSS viewport and
+the queries fire. The check now uses a 640px viewport, which is what a 1280px window at 200%
+presents, and the page reflows correctly.

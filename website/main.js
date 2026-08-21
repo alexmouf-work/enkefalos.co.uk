@@ -158,6 +158,41 @@
     show(0, "next");
   }
 
+  /* ------------------------------------------------------------------------
+     Scroll progress
+
+     Only runs where the browser cannot drive the bar from a scroll timeline
+     in CSS. Where it can, the stylesheet owns it and this does nothing, which
+     keeps the common path off the main thread entirely.
+     ------------------------------------------------------------------------ */
+  function initProgress() {
+    var bar = document.querySelector("[data-progress]");
+    if (!bar) return;
+    if (window.CSS && CSS.supports && CSS.supports("animation-timeline: scroll()")) return;
+
+    var ticking = false;
+
+    function paint() {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - doc.clientHeight;
+      /* A page shorter than the viewport has nothing to report. */
+      var ratio = scrollable > 0 ? Math.min(doc.scrollTop / scrollable, 1) : 0;
+      bar.style.transform = "scaleX(" + ratio + ")";
+      ticking = false;
+    }
+
+    function request() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(paint);
+    }
+
+    window.addEventListener("scroll", request, { passive: true });
+    window.addEventListener("resize", request, { passive: true });
+    paint();
+  }
+
   initReveal();
   initCarousel();
+  initProgress();
 })();
